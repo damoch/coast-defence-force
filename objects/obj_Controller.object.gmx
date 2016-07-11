@@ -25,7 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>current_unit=undefined;
+            <string>
+//cities list definition
+for(i=0;i&lt;instance_number(obj_City);i++){
+    cities[i]=(instance_find(obj_City,i)).id
+}
+
+current_unit=undefined;
 credits=500;
 
 //credits+=obj_City.instance_count*200

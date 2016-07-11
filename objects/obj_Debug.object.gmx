@@ -35,6 +35,7 @@ if(obj_Controller.current_unit){
     draw_text(0,40,"Y: "+string(obj_Controller.current_unit.y))
     //draw_text(0,60,"Target id: "+string(obj_Controller.current_unit.target))
     }
+    draw_text(0,60,"FPS: "+string(fps))
     //draw_text(0,60,string(obj_Controller.credits))
 </string>
           </argument>

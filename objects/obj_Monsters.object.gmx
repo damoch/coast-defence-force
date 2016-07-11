@@ -90,18 +90,20 @@ status_text=""
             <kind>1</kind>
             <string>//search for new target every 1.5h (450 frames) of in game time
 
-if(instance_exists(obj_City)){target_city=instance_nearest(x,y,obj_City) }
+if(instance_exists(obj_City)){target_city=/*instance_nearest(x,y,obj_City)*/obj_Controller.cities[random(instance_number(obj_City))] }
 else target_city=0;
 if(instance_exists(obj_Infantry)){target_unit=instance_nearest(x,y,obj_Infantry) }
 else target_unit=0;
 
+//show_message(string(target_city))
 if(target_city!=0){
 if(distance_to_object(target_city)&gt;distance_to_object(target_unit))
     move_towards_point(target_city.x,target_city.y,unit_speed)
 }
 else
     if(target_unit!=0)move_towards_point(target_unit.x,target_unit.y,unit_speed)
-alarm[1]=room_speed
+alarm[1]=150
+
 </string>
           </argument>
         </arguments>
@@ -160,33 +162,6 @@ status_text=string(status)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Armour">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(!reloading){
-reloading=true
-other.status-=15;
-alarm[0]=60}
-speed=0
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_City">
       <action>
         <libid>1</libid>
@@ -207,6 +182,33 @@ speed=0
             <string>if(!reloading){
 reloading=true
 other.status-=10;
+alarm[0]=60}
+speed=0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Armour">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!reloading){
+reloading=true
+other.status-=15;
 alarm[0]=60}
 speed=0
 </string>
