@@ -89,11 +89,18 @@ status_text=""
           <argument>
             <kind>1</kind>
             <string>//search for new target every 1.5h (450 frames) of in game time
+if(!(distance_to_object(instance_nearest(x,y,obj_City))&lt;150)){
+    if(instance_exists(obj_City)){target_city=/*instance_nearest(x,y,obj_City)*/obj_Controller.cities[random(instance_number(obj_City))] }
+    else target_city=0;
+    if(instance_exists(obj_Infantry)){target_unit=instance_nearest(x,y,obj_Infantry) }
+    else target_unit=0;
+}
+else
+{
+    target_city=instance_nearest(x,y,obj_City)
+}
 
-if(instance_exists(obj_City)){target_city=/*instance_nearest(x,y,obj_City)*/obj_Controller.cities[random(instance_number(obj_City))] }
-else target_city=0;
-if(instance_exists(obj_Infantry)){target_unit=instance_nearest(x,y,obj_Infantry) }
-else target_unit=0;
+
 
 //show_message(string(target_city))
 if(target_city!=0){
