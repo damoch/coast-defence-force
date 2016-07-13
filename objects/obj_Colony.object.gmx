@@ -50,9 +50,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_number(obj_Monsters)&lt;instance_number(obj_Infantry)+3+instance_number(obj_Armour))
+            <string>if(instance_number(obj_Monsters)&lt;instance_number(obj_Infantry)+(3*obj_Controller.monsters_multiplier)+instance_number(obj_Armour))
     instance_create(x,y,obj_Monsters)
 alarm[0]=30*irandom_range(15,25)
+
+
 </string>
           </argument>
         </arguments>

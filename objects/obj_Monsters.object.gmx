@@ -88,7 +88,8 @@ status_text=""
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//search for new target every 1.5h (450 frames) of in game time
+            <string>speed=unit_speed;
+//search for new target every 1.5h (450 frames) of in game time
 if(!(distance_to_object(instance_nearest(x,y,obj_City))&lt;150)){
     if(instance_exists(obj_City)){target_city=/*instance_nearest(x,y,obj_City)*/obj_Controller.cities[random(instance_number(obj_City))] }
     else target_city=0;
