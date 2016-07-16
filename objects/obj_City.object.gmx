@@ -51,8 +51,10 @@ status=100
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(status&lt;0)
+            <string>if(status&lt;0){
+    obj_Controller.alarm[1]=1;
     instance_change(obj_Colony,true)
+    }
 </string>
           </argument>
         </arguments>

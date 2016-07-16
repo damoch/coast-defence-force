@@ -43,6 +43,9 @@ unit_speed=0.64;
 reloading=false;
 
 status_text=""
+
+//debug
+colliders=0;
 </string>
           </argument>
         </arguments>
@@ -88,10 +91,10 @@ status_text=""
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed=unit_speed;
+            <string>/*speed=unit_speed;
 //search for new target every 1.5h (450 frames) of in game time
 if(!(distance_to_object(instance_nearest(x,y,obj_City))&lt;150)){
-    if(instance_exists(obj_City)){target_city=/*instance_nearest(x,y,obj_City)*/obj_Controller.cities[random(instance_number(obj_City))] }
+    if(instance_exists(obj_City)){target_city=obj_Controller.cities[random(instance_number(obj_City))] }
     else target_city=0;
     if(instance_exists(obj_Infantry)){target_unit=instance_nearest(x,y,obj_Infantry) }
     else target_unit=0;
@@ -99,6 +102,8 @@ if(!(distance_to_object(instance_nearest(x,y,obj_City))&lt;150)){
 else
 {
     target_city=instance_nearest(x,y,obj_City)
+    targetX=target_city.x
+    targetY=target_city.y
 }
 
 
@@ -106,11 +111,19 @@ else
 //show_message(string(target_city))
 if(target_city!=0){
 if(distance_to_object(target_city)&gt;distance_to_object(target_unit))
-    move_towards_point(target_city.x,target_city.y,unit_speed)
+    move_towards_point(targetX,targetY,unit_speed)
 }
 else
     if(target_unit!=0)move_towards_point(target_unit.x,target_unit.y,unit_speed)
-alarm[1]=150
+//alarm[1]=150
+*/
+
+
+target_city=obj_Controller.cities[random(instance_number(obj_City))] 
+//if(instance_exists(
+targetX=target_city.x
+targetY=target_city.y
+move_towards_point(targetX,targetY,unit_speed)
 
 </string>
           </argument>
@@ -165,6 +178,32 @@ alarm[1]=150
 
 if(status&lt;=0)instance_destroy()   
 status_text=string(status)
+
+if(colliders==2)instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Colony">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[1]=1
+status=100
 </string>
           </argument>
         </arguments>
@@ -241,10 +280,12 @@ speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!reloading){
+            <string>//colliders++;
+if(!reloading){
 reloading=true
 other.status-=25;
-alarm[0]=60}
+alarm[0]=60
+alarm[1]=60}
 speed=0
 </string>
           </argument>

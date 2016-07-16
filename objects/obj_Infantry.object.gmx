@@ -177,7 +177,7 @@ if(status&lt;=0)instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(target!=0&amp;&amp;!reloading){
+            <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
     target.status-=5;
     //show_message(string(id)+" "+string(target))
     reloading=true
