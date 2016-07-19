@@ -53,6 +53,7 @@ status=100
             <kind>1</kind>
             <string>if(status&lt;0){
     obj_Controller.alarm[1]=1;
+    obj_Controller.panic_level+=10;
     instance_change(obj_Colony,true)
     }
 </string>

@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>friendly_near=false;
 targetX=0
 targetY=0
 
@@ -41,6 +41,8 @@ status=100;
 status_text=""
 
 reloading=false;
+
+will_of_fight=100;
 
 
 </string>
@@ -67,6 +69,7 @@ reloading=false;
             <kind>1</kind>
             <string>obj_Controller.current_unit=undefined
 obj_Controller.credits+=50
+obj_Controller.panic_level+=0.75;
 </string>
           </argument>
         </arguments>
@@ -136,7 +139,11 @@ move_towards_point(targetX,targetY,unit_speed)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//stop moving when destination is reached
+            <string>//if ally is near
+if(distance_to_object(instance_nearest(x,y,obj_Infantry))&lt;128)friendly_near=true;
+else friendly_near=false;
+
+//stop moving when destination is reached
 if(distance_to_point(targetX,targetY)==0)speed=0
 
 //stop moving when on meeting with allied unit
@@ -182,7 +189,24 @@ if(status&lt;=0)instance_destroy()
     //show_message(string(id)+" "+string(target))
     reloading=true
     alarm[1]=15
+    will_of_fight=random(100)
+    if(obj_Controller.panic_level&gt;will_of_fight)
+   {
+   //move_towards_point(x-256,y,unit_speed);
+    targetX=x-256;
+    targetY=y
+    move_towards_point(targetX,targetY,unit_speed);
+    
+} 
     }
+//if(!friendly_near){
+//move_towards_point(x-256,y,unit_speed);
+//    targetX=x-256;
+//    targetY=y
+//    move_towards_point(targetX,targetY,unit_speed);
+    
+//}
+
 </string>
           </argument>
         </arguments>

@@ -59,6 +59,16 @@ day_string=string(day)+" "+string_upper(months[month])
 time_text=string(time)+":00"
 
 alarm[0]=300
+
+/*VERY IMPORTANT!
+ *Panic level declaration
+ *This indicator has STRONG impact on gameplay
+ *So proceed with caution when modyfing it in any way
+*/
+
+panic_level=random(11);
+
+panic_string="POZIOM PANIKI: "+string(panic_level)
 </string>
           </argument>
         </arguments>
@@ -114,6 +124,7 @@ else time++
 
 if(time==6){credits+=instance_number(obj_City)*500;monsters_multiplier++;}
 time_text="CZAS: "+string(time)+":00"
+panic_string="POZIOM PANIKI: "+string(panic_level)
 //show_message(string(room_speed))
 credits+=instance_number(obj_City)*10
 alarm[0]=300
@@ -168,7 +179,7 @@ if(mouse_check_button_pressed(mb_right)&amp;&amp;current_unit!=undefined){
           <argument>
             <kind>1</kind>
             <string>draw_text(x+256,y,time_text)
-draw_text(x+256,y+32,day_string)
+draw_text(x+256,y+32,panic_string)
 draw_text(x+256,y+64,"FORSA: "+string(credits))
 </string>
           </argument>
