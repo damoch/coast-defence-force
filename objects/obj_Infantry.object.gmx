@@ -31,6 +31,7 @@ targetY=0
 
 unit_speed=1.28;
 
+panic_mode=false;
 
 target=0;
 
@@ -70,6 +71,62 @@ will_of_fight=100;
             <string>obj_Controller.current_unit=undefined
 obj_Controller.credits+=50
 obj_Controller.panic_level+=0.75;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>panic_mode=false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>panic_mode=true
+will_of_fight=random(100)
+if(obj_Controller.panic_level&gt;will_of_fight){
+        targetX=x-256;
+        targetY=y
+        move_towards_point(targetX,targetY,unit_speed);
+        alarm[3]=30
+}
+else{
+    alarm[3]=30
+}
 </string>
           </argument>
         </arguments>
@@ -186,26 +243,11 @@ if(status&lt;=0)instance_destroy()
             <kind>1</kind>
             <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
     target.status-=5;
-    //show_message(string(id)+" "+string(target))
     reloading=true
     alarm[1]=15
-    will_of_fight=random(100)
-    if(obj_Controller.panic_level&gt;will_of_fight)
-   {
-   //move_towards_point(x-256,y,unit_speed);
-    targetX=x-256;
-    targetY=y
-    move_towards_point(targetX,targetY,unit_speed);
-    
-} 
-    }
-//if(!friendly_near){
-//move_towards_point(x-256,y,unit_speed);
-//    targetX=x-256;
-//    targetY=y
-//    move_towards_point(targetX,targetY,unit_speed);
-    
-//}
+    if(!panic_mode)alarm[2]=30
+}
+
 
 </string>
           </argument>
