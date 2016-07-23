@@ -28,7 +28,7 @@
             <string>friendly_near=false;
 targetX=0
 targetY=0
-
+recent_victory=false
 unit_speed=1.28;
 
 panic_mode=false;
@@ -78,6 +78,29 @@ if(obj_Controller.panic_level&lt;90)
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>recent_victory=false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
@@ -120,6 +143,9 @@ if(obj_Controller.panic_level&lt;90)
             <kind>1</kind>
             <string>panic_mode=true
 will_of_fight=random(100)
+if(status&lt;30)will_of_fight-=15
+else will_of_fight+=25
+if(recent_victory)will_of_fight+=10
 if(obj_Controller.panic_level&gt;will_of_fight){
         targetX=x-256;
         targetY=y
@@ -277,7 +303,11 @@ if(status&lt;=0)instance_destroy()
     alarm[1]=15
     if(!panic_mode)alarm[2]=30
 }
-
+if(target==undefined){
+    recent_victory=true;
+    alarm[4]=600;
+    }
+    
 
 </string>
           </argument>
