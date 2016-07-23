@@ -122,9 +122,17 @@ for(i=0;i&lt;instance_number(obj_City);i++){
 if(time==23){time=0;day++if(day&gt;31){day=1;month++if(month&gt;11)month=0}}
 else time++
 
-if(instance_number(obj_Infantry)&lt;=instance_number(obj_Monsters))panic_level++;
+if(instance_number(obj_Infantry)&lt;=instance_number(obj_Monsters))
+    {   
+        if(panic_level&lt;90)
+            panic_level++;
+    }
 
-if(instance_number(obj_City)&lt;=instance_number(obj_Colony))panic_level+=3
+if(instance_number(obj_City)&lt;=instance_number(obj_Colony))
+    {   
+        if(panic_level&lt;90)
+            panic_level+=3
+    }
 
 if(time==6){credits+=instance_number(obj_City)*500;monsters_multiplier++;}
 time_text="CZAS: "+string(time)+":00"

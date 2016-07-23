@@ -49,7 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>creating=false;
-instance_create(x+64,y,obj_Armour)
+instance_create(x+64,y,obj_Tanks)
 </string>
           </argument>
         </arguments>

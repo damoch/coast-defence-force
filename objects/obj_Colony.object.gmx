@@ -27,7 +27,40 @@
             <kind>1</kind>
             <string>alarm[0]=30
 
+alarm[1]=24*300
 
+new_x=0
+
+new_y=0
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(instance_number(obj_Colony)&lt;3){
+    new_x=room_width+random(100)
+    new_y=random(y)
+    instance_create(new_x,new_y,obj_Colony);
+    }
 </string>
           </argument>
         </arguments>

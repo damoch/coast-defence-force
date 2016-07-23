@@ -71,7 +71,8 @@ will_of_fight=100;
             <kind>1</kind>
             <string>obj_Controller.current_unit=undefined
 obj_Controller.credits+=50
-obj_Controller.panic_level+=0.75;
+if(obj_Controller.panic_level&lt;90)
+    obj_Controller.panic_level+=0.75;
 </string>
           </argument>
         </arguments>
@@ -225,7 +226,7 @@ if(status&lt;=0)instance_destroy()
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_UnitSpawner">
+    <event eventtype="4" ename="obj_TankSpawner">
       <action>
         <libid>1</libid>
         <id>603</id>
