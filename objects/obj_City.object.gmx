@@ -28,8 +28,12 @@
             <string>overruned=false
 status=100
 
+evacuater=0
+
 evacuation=false
 population=100
+
+population_text="Populacja: "+string(population)+"%"
 
 
 </string>
@@ -56,7 +60,9 @@ population=100
             <kind>1</kind>
             <string>
     population-=random(10)
-    evacuation=false
+    //evacuation=false
+    show_message("dsads")
+    population_text="Populacja: "+string(population)+"%"
 
 </string>
           </argument>
@@ -86,13 +92,78 @@ population=100
         obj_Controller.panic_level+=10;
     instance_change(obj_Colony,true)
     }
+    
+//bullshit that is not working
+
+/*    
 if(place_meeting(x,y,obj_Infantry)&amp;&amp;!evacuation){
+//show_message("trololo")
     evacuation=true
-    alarm[0]=room_speed
+    alarm[0]=30
 }else
 {
     evacuation=false
 }
+*/
+
+//bullshit that may actually work
+
+//nope
+/*
+if((place_meeting(x,y,obj_Infantry)&amp;&amp;!evacuation))evacuation=true
+else evacuation=false
+*/
+
+//maybe this time?
+if((place_meeting(x,y,obj_Infantry)&amp;&amp;evacuater==0)){evacuater=instance_nearest(x,y,obj_Infantry).id;/*show_message(string(evacuater)+" "+string(instance_nearest(x,y,obj_Infantry).id))*/}
+else evacuater=0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Infantry">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>population_text="Populacja: "+string(population)+"%"
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self()
+draw_text(x,y-48,population_text)
 </string>
           </argument>
         </arguments>

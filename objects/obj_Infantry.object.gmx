@@ -29,6 +29,8 @@
 targetX=0
 targetY=0
 
+evacuating=false
+
 unit_speed=1.28;
 
 panic_mode=false;
@@ -75,6 +77,29 @@ recent_victory=false
 obj_Controller.credits+=50
 if(obj_Controller.panic_level&lt;90)
     obj_Controller.panic_level+=0.75;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>evacuating=false
 </string>
           </argument>
         </arguments>
@@ -278,6 +303,37 @@ if(status&lt;=0)instance_destroy()
     obj_Controller.credits-=restore
     }
     
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_City">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!evacuating){
+    evacuating=true
+    show_message(string(self.id)+" "+string(instance_nearest(x,y,obj_City).evacuater))
+    if(other.evacuater==self.id){
+        show_message("dsadas")
+        other.population-=random(10)
+        }
+    alarm[5]=30
+}
 </string>
           </argument>
         </arguments>
