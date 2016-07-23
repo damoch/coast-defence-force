@@ -69,7 +69,8 @@ colliders=0;
           <argument>
             <kind>1</kind>
             <string>obj_Controller.credits+=25
-obj_Controller.panic_level-=3;
+if(obj_Controller.panic_level&gt;0)
+    obj_Controller.panic_level-=0.9;
 </string>
           </argument>
         </arguments>

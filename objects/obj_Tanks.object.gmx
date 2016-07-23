@@ -72,7 +72,7 @@ will_of_fight=100;
             <string>obj_Controller.current_unit=undefined
 obj_Controller.credits+=50
 if(obj_Controller.panic_level&lt;90)
-    obj_Controller.panic_level+=0.75;
+    obj_Controller.panic_level+=1.5;
 </string>
           </argument>
         </arguments>
