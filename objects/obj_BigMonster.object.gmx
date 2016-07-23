@@ -38,7 +38,7 @@ target_city=0;
 targetX=0
 targetY=0
 
-unit_speed=0.64;
+unit_speed=0.32;
 
 reloading=false;
 
@@ -69,7 +69,7 @@ colliders=0;
           <argument>
             <kind>1</kind>
             <string>obj_Controller.credits+=25
-obj_Controller.panic_level-=10;
+obj_Controller.panic_level-=3;
 </string>
           </argument>
         </arguments>
