@@ -34,6 +34,8 @@ new_x=0
 new_y=0
 
 
+spawning_rate=0
+
 </string>
           </argument>
         </arguments>
@@ -83,8 +85,11 @@ new_y=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_number(obj_Monsters)&lt;instance_number(obj_Infantry)+(3*obj_Controller.monsters_multiplier)+instance_number(obj_Armour))
-    instance_create(x,y,obj_Monsters)
+            <string>spawning_rate=random(100)
+if(instance_number(obj_Monsters)+instance_number(obj_BigMonster)&lt;instance_number(obj_Infantry)+(3*obj_Controller.monsters_multiplier)+instance_number(obj_Armour)){
+    if(spawning_rate&lt;25)instance_create(x,y,obj_BigMonster)
+    else instance_create(x,y,obj_Monsters)
+}
 alarm[0]=30*irandom_range(15,25)
 
 

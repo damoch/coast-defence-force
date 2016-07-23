@@ -238,6 +238,7 @@ if(distance_to_point(targetX,targetY)==0)speed=0
 
 //setting target
 if(distance_to_object(instance_nearest(x,y,obj_Monsters))&lt;attack_range)target=instance_nearest(x,y,obj_Monsters);
+else if(distance_to_object(instance_nearest(x,y,obj_BigMonster))&lt;attack_range)target=instance_nearest(x,y,obj_BigMonster);
 else target=0;
 
 //combat
@@ -249,6 +250,40 @@ else status_text=""
 
 //death
 if(status&lt;=0)instance_destroy()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_BigMonster">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
+    target.status-=15;
+    reloading=true
+    alarm[1]=15
+    if(!panic_mode)alarm[2]=30
+}
+if(target==undefined){
+    recent_victory=true;
+    alarm[4]=600;
+    }
+    
+
 </string>
           </argument>
         </arguments>
@@ -300,7 +335,7 @@ if(status&lt;=0)instance_destroy()
           <argument>
             <kind>1</kind>
             <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
-    target.status-=5;
+    target.status-=2;
     reloading=true
     alarm[1]=15
     if(!panic_mode)alarm[2]=30

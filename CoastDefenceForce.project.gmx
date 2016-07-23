@@ -12,6 +12,7 @@
     <sprite>sprites\spr_TempInfantry</sprite>
     <sprite>sprites\spr_TempCity</sprite>
     <sprite>sprites\spr_TempUnitSpawner</sprite>
+    <sprite>sprites\spr_TempBigMonster</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -20,6 +21,7 @@
     <object>objects\obj_Infantry</object>
     <object>objects\obj_Tanks</object>
     <object>objects\obj_Monsters</object>
+    <object>objects\obj_BigMonster</object>
     <object>objects\obj_Debug</object>
     <object>objects\obj_City</object>
     <object>objects\obj_MonsterSpawner</object>
