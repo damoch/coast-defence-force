@@ -325,7 +325,7 @@ if(status&lt;=0)instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!evacuating){
+            <string>/*if(!evacuating){
     evacuating=true
     show_message(string(self.id)+" "+string(instance_nearest(x,y,obj_City).evacuater))
     if(other.evacuater==self.id){
@@ -333,7 +333,7 @@ if(status&lt;=0)instance_destroy()
         other.population-=random(10)
         }
     alarm[5]=30
-}
+}*/
 </string>
           </argument>
         </arguments>

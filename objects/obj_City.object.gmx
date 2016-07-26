@@ -41,6 +41,29 @@ population_text="Populacja: "+string(population)+"%"
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>evacuation=false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -86,12 +109,20 @@ population_text="Populacja: "+string(population)+"%"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(status&lt;0){
+            <string>if(status&lt;=0){
     obj_Controller.alarm[1]=1;
     if(obj_Controller.panic_level&lt;90)
         obj_Controller.panic_level+=10;
     instance_change(obj_Colony,true)
     }
+
+if(evacuater!=0){
+                 if(!evacuation){
+                                 evacuation=true
+                                  alarm[1]=150
+                                  show_message("Like im aooutta here lol")
+                 }
+}
     
 //bullshit that is not working
 
@@ -115,8 +146,11 @@ else evacuation=false
 */
 
 //maybe this time?
-if((place_meeting(x,y,obj_Infantry)&amp;&amp;evacuater==0)){evacuater=instance_nearest(x,y,obj_Infantry).id;/*show_message(string(evacuater)+" "+string(instance_nearest(x,y,obj_Infantry).id))*/}
+//no no nonnonnonononnonnno
+/*
+if((place_meeting(x,y,obj_Infantry)&amp;&amp;evacuater==0)){evacuater=instance_nearest(x,y,obj_Infantry).id;}
 else evacuater=0
+*/
 </string>
           </argument>
         </arguments>
@@ -140,6 +174,10 @@ else evacuater=0
           <argument>
             <kind>1</kind>
             <string>population_text="Populacja: "+string(population)+"%"
+
+evacuater=other.id
+
+//show_message(evacuater)
 </string>
           </argument>
         </arguments>
