@@ -11,6 +11,7 @@
     <sprite>sprites\spr_TempMonsters</sprite>
     <sprite>sprites\spr_TempInfantry</sprite>
     <sprite>sprites\spr_TempCity</sprite>
+    <sprite>sprites\spr_TempAbdondedCity</sprite>
     <sprite>sprites\spr_TempUnitSpawner</sprite>
     <sprite>sprites\spr_TempBigMonster</sprite>
   </sprites>
@@ -24,6 +25,7 @@
     <object>objects\obj_Monsters</object>
     <object>objects\obj_BigMonster</object>
     <object>objects\obj_Debug</object>
+    <object>objects\obj_AbdondedCity</object>
     <object>objects\obj_City</object>
     <object>objects\obj_MonsterSpawner</object>
     <object>objects\obj_Colony</object>

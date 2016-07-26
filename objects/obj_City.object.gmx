@@ -33,7 +33,7 @@ evacuater=0
 evacuation=false
 population=100
 
-population_text="Populacja: "+string(population)+"%"
+population_text="Populacja: "+string(population)+"%"+ " Obecny wybawca: "+string(evacuater)
 
 
 </string>
@@ -59,6 +59,9 @@ population_text="Populacja: "+string(population)+"%"
           <argument>
             <kind>1</kind>
             <string>evacuation=false
+population_text="Populacja: "+string(population)+"%"+ " Obecny wybawca: "+string(evacuater)
+
+population-=random(2)
 </string>
           </argument>
         </arguments>
@@ -117,11 +120,20 @@ population_text="Populacja: "+string(population)+"%"
     }
 
 if(evacuater!=0){
-                 if(!evacuation){
-                                 evacuation=true
-                                  alarm[1]=150
-                                  show_message("Like im aooutta here lol")
-                 }
+    if(!evacuation){
+        evacuation=true
+        alarm[1]=150
+        //show_message("Like im aooutta here lol and may saviorrer iz "+string(evacuater))
+}
+}
+if(place_meeting(x,y,obj_Infantry)==true){
+    if(evacuater==0)
+        evacuater=other.id
+}
+else{
+    
+    evacuater=0
+    //show_message("Lol, u lewing me? ;( "+string(evacuater))
 }
     
 //bullshit that is not working
@@ -173,9 +185,9 @@ else evacuater=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>population_text="Populacja: "+string(population)+"%"
+            <string>population_text="Populacja: "+string(population)+"%"+ " Obecny wybawca: "+string(evacuater)
 
-evacuater=other.id
+
 
 //show_message(evacuater)
 </string>
