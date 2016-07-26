@@ -51,7 +51,7 @@
             <string>heal_by=random(50)
 if(other.status&lt;=30){
     other.status+=heal_by
-    obj_Controller-=heal_by
+    obj_Controller.credits-=heal_by
 }
 </string>
           </argument>
@@ -78,7 +78,7 @@ if(other.status&lt;=30){
             <string>heal_by=random(50)
 if(other.status&lt;=30){
     other.status+=heal_by
-    obj_Controller-=heal_by
+    obj_Controller.credits-=heal_by
 }
 </string>
           </argument>
