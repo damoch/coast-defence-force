@@ -100,7 +100,7 @@ instance_create(x+64,y,obj_Infantry)
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_text(x,y+32,"Kliknij aby wyprodukowac piechote");
+draw_text(x,y-32,"Kliknij aby wyprodukowac piechote");
 </string>
           </argument>
         </arguments>
