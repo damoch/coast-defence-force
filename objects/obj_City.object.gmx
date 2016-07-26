@@ -33,9 +33,32 @@ evacuater=0
 evacuation=false
 population=100
 
-population_text="Populacja: "+string(population)+"%"+ " Obecny wybawca: "+string(evacuater)
+population_text="Populacja: "+string(population)+"%"
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_create(x,y,obj_AbandonedCity);
 </string>
           </argument>
         </arguments>
@@ -59,9 +82,12 @@ population_text="Populacja: "+string(population)+"%"+ " Obecny wybawca: "+string
           <argument>
             <kind>1</kind>
             <string>evacuation=false
-population_text="Populacja: "+string(population)+"%"+ " Obecny wybawca: "+string(evacuater)
+population_text="Populacja: "+string(population)+"%"
 
 population-=random(2)
+
+if(population&lt;=0)
+        instance_change(obj_AbandonedCity,true)
 </string>
           </argument>
         </arguments>
@@ -185,11 +211,34 @@ else evacuater=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>population_text="Populacja: "+string(population)+"%"+ " Obecny wybawca: "+string(evacuater)
+            <string>//population_text="Populacja: "+string(population)+"%"+ " Obecny wybawca: "+string(evacuater)
 
 
 
 //show_message(evacuater)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>population=-1
 </string>
           </argument>
         </arguments>

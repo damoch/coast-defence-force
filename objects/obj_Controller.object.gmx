@@ -128,7 +128,7 @@ if(instance_number(obj_Infantry)&lt;=instance_number(obj_Monsters))
             panic_level++;
     }
 
-if(instance_number(obj_City)&lt;=instance_number(obj_Colony))
+if(instance_number(obj_City)+instance_number(obj_AbandonedCity)&lt;=instance_number(obj_Colony))
     {   
         if(panic_level&lt;90)
             panic_level+=3
