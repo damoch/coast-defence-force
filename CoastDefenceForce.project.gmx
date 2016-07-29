@@ -15,10 +15,10 @@
     <sprite>sprites\spr_TempUnitSpawner</sprite>
     <sprite>sprites\spr_TempBigMonster</sprite>
     <sprite>sprites\spr_TempHospital</sprite>
+    <sprite>sprites\spr_TempCivilian</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\obj_Controller</object>
     <object>objects\obj_Infantry</object>
