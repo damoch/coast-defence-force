@@ -39,6 +39,7 @@ months[10]="listopad"
 months[11]="grudzien"
 
 //only for prototype
+/*
 welcome_message_one="Witaj! Aby ewakuowac miasto (pomaranczowe kwadraty) musisz umiescic w nim jednostke piechoty i czekac az populacja spadnie do zera"
 welcome_message_two="Kwadrat z czerwonym krzyzem to szpital. Mozna w nim leczyc jednostki piechoty i czolgow"
 welcome_message_three="Jezeli potwory beda atakowac twoje miasto zbyt dlugo, zamieni sie ono w siedlisko. Z siedliska beda wykluwac sie kolejne potwory"
@@ -52,6 +53,7 @@ show_message(welcome_message_three)
 show_message(welcome_message_four)
 show_message(welcome_message_five)
 show_message(welcome_message_six)
+*/
 
 monsters_multiplier=1
 //cities list definition

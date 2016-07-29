@@ -26,6 +26,7 @@
     <object>objects\obj_Monsters</object>
     <object>objects\obj_BigMonster</object>
     <object>objects\obj_Debug</object>
+    <object>objects\obj_Civilian</object>
     <object>objects\obj_Hospital</object>
     <object>objects\obj_AbandonedCity</object>
     <object>objects\obj_City</object>
@@ -36,7 +37,6 @@
     <objects name="OutOfUsage">
       <object>objects\obj_Armour</object>
     </objects>
-    <object>objects\obj_Civilian</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Temp</room>

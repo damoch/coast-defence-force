@@ -27,9 +27,55 @@
             <kind>1</kind>
             <string>unit_speed=0.64
 
+friendly_near=false
+//checking if friendly unit is near
+alarm[0]=1
+
+new_x=0
+new_y=0
+
 target_x=instance_nearest(x,y,obj_UnitSpawner).x
 target_y=instance_nearest(x,y,obj_UnitSpawner).y
 move_towards_point(target_x,target_y,unit_speed)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(instance_exists(obj_Infantry))
+    friendly_near=distance_to_object(instance_nearest(x,y,obj_Infantry))&lt;64
+else
+    friendly_near=false
+    
+if(!friendly_near)
+{
+    new_x=random(room_width)
+    new_y=random(room_height)
+    move_towards_point(new_x,new_y,unit_speed)
+}
+else
+    move_towards_point(target_x,target_y,unit_speed)
+    
+    
+
+alarm[0]=60
 </string>
           </argument>
         </arguments>
@@ -53,6 +99,8 @@ move_towards_point(target_x,target_y,unit_speed)
           <argument>
             <kind>1</kind>
             <string>instance_destroy()
+
+
 </string>
           </argument>
         </arguments>
