@@ -36,6 +36,7 @@
     <objects name="OutOfUsage">
       <object>objects\obj_Armour</object>
     </objects>
+    <object>objects\obj_Civilian</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Temp</room>

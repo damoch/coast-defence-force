@@ -85,6 +85,7 @@ population_text="Populacja: "+string(population)+"%"
 population_text="Populacja: "+string(population)+"%"
 
 population-=random(2)
+instance_create(x,y,obj_Civilian)
 
 if(population&lt;=0)
         instance_change(obj_AbandonedCity,true)
