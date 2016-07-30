@@ -71,6 +71,8 @@ month=random(12)
 //date string will use monster multiplier, because why not
 day_string=string(day)+" "+string_upper(months[month])
 
+people_killed=0
+people_saved=0
 
 time_text=string(time)+":00"
 
@@ -85,6 +87,31 @@ alarm[0]=300
 panic_level=random(11);
 
 panic_string="POZIOM PANIKI: "+string(panic_level)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//game over event
+
+show_message("ZABICI: "+string(people_killed)+"OCALENI: "+string(people_saved))
 </string>
           </argument>
         </arguments>
@@ -162,6 +189,9 @@ panic_string="POZIOM PANIKI: "+string(panic_level)
 //show_message(string(room_speed))
 credits+=instance_number(obj_City)*10
 alarm[0]=300
+
+if(!instance_exists(obj_City)&amp;&amp;!instance_exists(obj_Civilian))
+    alarm[2]=1
 </string>
           </argument>
         </arguments>
