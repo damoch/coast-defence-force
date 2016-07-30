@@ -58,7 +58,7 @@ population_text="Populacja: "+string(population)+"%"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x,y,obj_AbandonedCity);
+            <string>//instance_create(x,y,obj_AbandonedCity);
 </string>
           </argument>
         </arguments>

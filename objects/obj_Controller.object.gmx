@@ -150,6 +150,12 @@ if(instance_number(obj_City)+instance_number(obj_AbandonedCity)&lt;=instance_num
             panic_level+=3
     }
 
+if(instance_exists(obj_Civilian)){
+    if(instance_number(obj_Civilian)&gt;15)
+        show_message(string(instance_number(obj_Civilian)))
+        //show_message("za duzo!")
+}
+
 if(time==6){credits+=instance_number(obj_City)*500;monsters_multiplier++;}
 time_text="CZAS: "+string(time)+":00"
 panic_string="POZIOM PANIKI: "+string(panic_level)
