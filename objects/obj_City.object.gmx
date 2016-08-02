@@ -34,6 +34,7 @@ evacuation=false
 population=100
 
 population_text="Populacja: "+string(population)+"%"
+status_text="Status obrony: "+string(status)+"%"
 
 
 </string>
@@ -83,6 +84,7 @@ population_text="Populacja: "+string(population)+"%"
             <kind>1</kind>
             <string>evacuation=false
 population_text="Populacja: "+string(population)+"%"
+
 
 population-=random(2)
 instance_create(x,y,obj_Civilian)
@@ -162,7 +164,7 @@ else{
     evacuater=0
     //show_message("Lol, u lewing me? ;( "+string(evacuater))
 }
-    
+    status_text="Status obrony: "+string(status)+"%"
 //bullshit that is not working
 
 /*    
@@ -264,6 +266,7 @@ else evacuater=0
             <kind>1</kind>
             <string>draw_self()
 draw_text(x,y-48,population_text)
+draw_text(x,y-66,status_text)
 </string>
           </argument>
         </arguments>

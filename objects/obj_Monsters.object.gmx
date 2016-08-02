@@ -228,9 +228,19 @@ status=100
           <argument>
             <kind>1</kind>
             <string>if(!reloading){
-reloading=true
-other.status-=10;
-alarm[0]=60}
+    if(!other.evacuation){
+        reloading=true
+        other.status-=10;
+        alarm[0]=60
+    }
+    else{
+        reloading=true
+        other.status-=2;
+        status-=23
+        alarm[0]=60
+    }
+    
+}
 speed=0
 </string>
           </argument>

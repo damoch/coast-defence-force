@@ -28,6 +28,7 @@
             <string>unit_speed=0.64
 
 friendly_near=false
+monster_near=false
 //checking if friendly unit is near
 alarm[0]=1
 
