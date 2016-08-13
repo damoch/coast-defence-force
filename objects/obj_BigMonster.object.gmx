@@ -178,7 +178,10 @@ move_towards_point(targetX,targetY,unit_speed)
     if(instance_exists(obj_Infantry)){target_unit=instance_nearest(x,y,obj_Infantry) }
 }
 
-if(status&lt;=0)instance_destroy()   
+if(status&lt;=0){
+    obj_Controller.monsters_killed++;
+    instance_destroy()  
+} 
 status_text=string(status)
 
 if(colliders==2)instance_destroy();
@@ -236,8 +239,8 @@ status=100
     }
     else{
         reloading=true
-        other.status-=2;
-        status-=23
+        other.status-=10;
+        status-=13
         alarm[0]=60
     }
     

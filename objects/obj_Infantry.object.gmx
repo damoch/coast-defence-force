@@ -275,6 +275,7 @@ else status_text=""
 
 //death
 if(status&lt;=0){
+    obj_Controller.units_killed++;
     obj_Controller.people_killed+=500
     instance_destroy()
 }

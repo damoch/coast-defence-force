@@ -85,12 +85,16 @@ spawning_rate=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spawning_rate=random(100)
-if(instance_number(obj_Monsters)+instance_number(obj_BigMonster)&lt;instance_number(obj_Infantry)+(3*obj_Controller.monsters_multiplier)+instance_number(obj_Armour)){
-    if(spawning_rate&lt;25)instance_create(x,y,obj_BigMonster)
+            <string>monsters_sum=instance_number(obj_Monsters)+instance_number(obj_BigMonster)
+units_sum=instance_number(obj_Infantry)+instance_number(obj_Tanks)
+if(monsters_sum&lt;units_sum+obj_Controller.monsters_multiplier){
+    spawning_rate=random(100)
+    if(spawning_rate&gt;75)instance_create(x,y,obj_BigMonster)
     else instance_create(x,y,obj_Monsters)
+    alarm[0]=30*irandom_range(10,20)
 }
-alarm[0]=30*irandom_range(15,25)
+else
+    alarm[0]=30*irandom_range(15,25)
 
 
 </string>

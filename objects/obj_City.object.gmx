@@ -30,7 +30,9 @@ status=100
 
 evacuater=0
 
+under_attack=false
 evacuation=false
+
 population=100
 
 population_text="Populacja: "+string(population)+"%"
@@ -60,6 +62,34 @@ status_text="Status obrony: "+string(status)+"%"
           <argument>
             <kind>1</kind>
             <string>//instance_create(x,y,obj_AbandonedCity);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+cv=instance_create(x-30,y,obj_Civilian)
+//show_message(string(cv.id))
+population-=random(2)
+alarm[2]=15
+
 </string>
           </argument>
         </arguments>
@@ -142,6 +172,7 @@ if(population&lt;=0)
           <argument>
             <kind>1</kind>
             <string>if(status&lt;=0){
+    obj_Controller.people_killed+=75*population
     obj_Controller.alarm[1]=1;
     if(obj_Controller.panic_level&lt;90)
         obj_Controller.panic_level+=10;
@@ -164,6 +195,14 @@ else{
     evacuater=0
     //show_message("Lol, u lewing me? ;( "+string(evacuater))
 }
+if(((place_meeting(x,y,obj_BigMonster))||(place_meeting(x,y,obj_Monsters)))&amp;&amp;evacuater==0&amp;&amp;under_attack==false)
+{
+
+    alarm[2]=15
+    under_attack=true
+}
+
+
     status_text="Status obrony: "+string(status)+"%"
 //bullshit that is not working
 

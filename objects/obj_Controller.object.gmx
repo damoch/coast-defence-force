@@ -87,6 +87,9 @@ alarm[0]=300
 panic_level=random(11);
 
 panic_string="POZIOM PANIKI: "+string(panic_level)
+
+monsters_killed=0
+units_killed=0
 </string>
           </argument>
         </arguments>
@@ -111,7 +114,7 @@ panic_string="POZIOM PANIKI: "+string(panic_level)
             <kind>1</kind>
             <string>//game over event
 
-show_message("ZABICI: "+string(people_killed)+"OCALENI: "+string(people_saved))
+show_message("ZABICI: "+string(people_killed)+" OCALENI: "+string(people_saved))
 </string>
           </argument>
         </arguments>
@@ -178,12 +181,14 @@ if(instance_number(obj_City)+instance_number(obj_AbandonedCity)&lt;=instance_num
     }
 
 if(instance_exists(obj_Civilian)){
-    if(instance_number(obj_Civilian)&gt;15)
-        show_message(string(instance_number(obj_Civilian)))
+    if(instance_number(obj_Civilian)&gt;15)panic_level+=2
         //show_message("za duzo!")
 }
 
-if(time==6){credits+=instance_number(obj_City)*500;monsters_multiplier++;}
+if(time==6){credits+=instance_number(obj_City)*100;}
+if(time%6 == 0){
+    if(monsters_killed&gt;units_killed)monsters_multiplier++
+}
 time_text="CZAS: "+string(time)+":00"
 panic_string="POZIOM PANIKI: "+string(panic_level)
 //show_message(string(room_speed))
