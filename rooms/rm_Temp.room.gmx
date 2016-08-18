@@ -11,67 +11,92 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>//room creation code
-SPAWNPOINTS_NUMBER=2
-CITIES_NUMBER=5
+SPAWNPOINTS_NUMBER=5
+CITIES_NUMBER=7
 //set (choose) invasion direction
 invasion_direction=choose("UP","LEFT","RIGHT","DOWN")
 spawn_x=0
 spawn_y=0;
 
+lowest_x=0
+highest_x=0
+
+lowest_y=0
+highest_y=0
+
+//set random ranges
+switch(invasion_direction){
+    case "UP":
+        lowest_x=0
+        highest_x=room_width
+        lowest_y=-256
+        highest_y=0
+        break;
+    case "LEFT":
+        lowest_x=-256
+        highest_x=0
+        lowest_y=0
+        highest_y=room_height
+        break;
+    case "DOWN":
+        lowest_x=0
+        highest_x=room_width
+        lowest_y=room_height
+        highest_y=room_height+256
+        break;
+    case "RIGHT":
+        lowest_x=room_width
+        highest_x=room_width+256
+        lowest_y=0
+        highest_y=room_height
+        break;
+} 
+
 
 //create monsters spawnpoints
 for(i=0;i&lt;SPAWNPOINTS_NUMBER;i++){
-   switch(invasion_direction){
-   //TODO: this is quick and dirty, write something beter!
-    case "UP":
-        spawn_x=random_range(0,room_width)
-        spawn_y=random_range(-256,0)
-        break;
-    case "LEFT":
-        spawn_x=random_range(-256,0)
-        spawn_y=random_range(0,room_height)
-        break;
-    case "DOWN":
-        spawn_x=random_range(0,room_width)
-        spawn_y=random_range(room_height,room_height+256)
-        break;
-    case "RIGHT":
-        spawn_x=random_range(room_width, room_width+256)
-        spawn_y=random_range(0,room_height)
-        break;
-    } 
+    spawn_x=random_range(lowest_x,highest_x)
+    spawn_y=random_range(lowest_y,highest_y)
     instance_create(spawn_x,spawn_y,obj_Colony)
 }
+//set lowest and highest ranges
+
+switch(invasion_direction){
+    case "UP":
+        lowest_x=0
+        highest_x=room_width
+        lowest_y=room_height*0.25
+        highest_y=room_height
+        break;
+    case "LEFT":
+        lowest_x=room_width*0.25
+        highest_x=room_width
+        lowest_y=0
+        highest_y=room_height
+        break;
+    case "DOWN":
+        lowest_x=0
+        highest_x=room_width
+        lowest_y=0
+        highest_y=room_height*0.75
+        break;
+    case "RIGHT":
+        lowest_x=0
+        highest_x=room_width*0.75
+        lowest_y=0
+        highest_y=room_height
+        break;
+} 
 
 //create cities and initiate cities list
 for(i=0;i&lt;CITIES_NUMBER;i++){
-   switch(invasion_direction){
-   //TODO: this is quick and dirty, write something beter!
-    case "UP":
-        spawn_x=random_range(0,room_width)
-        spawn_y=random_range(room_height/4,room_height)
-        break;
-    case "LEFT":
-        spawn_x=random_range(room_width/4,room_width)
-        spawn_y=random_range(0,room_height)
-        break;
-    case "DOWN":
-        spawn_x=random_range(0,room_width)
-        spawn_y=random_range(0,room_height*0.75)
-        break;
-    case "RIGHT":
-        spawn_x=random_range(0, room_width*0.75)
-        spawn_y=random_range(0,room_height)
-        break;
-    } 
+    spawn_x=random_range(lowest_x,highest_x)
+    spawn_y=random_range(lowest_y,highest_y)
     city=instance_create(spawn_x,spawn_y,obj_City)
-    //cities[i]=(instance_find(obj_City,i))
+
 }
 
 
-for(i=0;i&lt;instance_number(obj_City);i++){
-    cities[i]=(instance_find(obj_City,i))
-}
 instance_create(0,0,obj_Controller)</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
