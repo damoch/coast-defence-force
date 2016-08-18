@@ -10,9 +10,69 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>for(i=0;i&lt;instance_number(obj_City);i++){
+  <code>//room creation code
+SPAWNPOINTS_NUMBER=2
+CITIES_NUMBER=5
+//set (choose) invasion direction
+invasion_direction=choose("UP","LEFT","RIGHT","DOWN")
+spawn_x=0
+spawn_y=0;
+
+
+//create monsters spawnpoints
+for(i=0;i&lt;SPAWNPOINTS_NUMBER;i++){
+   switch(invasion_direction){
+   //TODO: this is quick and dirty, write something beter!
+    case "UP":
+        spawn_x=random_range(0,room_width)
+        spawn_y=random_range(-256,0)
+        break;
+    case "LEFT":
+        spawn_x=random_range(-256,0)
+        spawn_y=random_range(0,room_height)
+        break;
+    case "DOWN":
+        spawn_x=random_range(0,room_width)
+        spawn_y=random_range(room_height,room_height+256)
+        break;
+    case "RIGHT":
+        spawn_x=random_range(room_width, room_width+256)
+        spawn_y=random_range(0,room_height)
+        break;
+    } 
+    instance_create(spawn_x,spawn_y,obj_Colony)
+}
+
+//create cities and initiate cities list
+for(i=0;i&lt;CITIES_NUMBER;i++){
+   switch(invasion_direction){
+   //TODO: this is quick and dirty, write something beter!
+    case "UP":
+        spawn_x=random_range(0,room_width)
+        spawn_y=random_range(room_height/4,room_height)
+        break;
+    case "LEFT":
+        spawn_x=random_range(room_width/4,room_width)
+        spawn_y=random_range(0,room_height)
+        break;
+    case "DOWN":
+        spawn_x=random_range(0,room_width)
+        spawn_y=random_range(0,room_height*0.75)
+        break;
+    case "RIGHT":
+        spawn_x=random_range(0, room_width*0.75)
+        spawn_y=random_range(0,room_height)
+        break;
+    } 
+    city=instance_create(spawn_x,spawn_y,obj_City)
+    //cities[i]=(instance_find(obj_City,i))
+}
+
+
+for(i=0;i&lt;instance_number(obj_City);i++){
     cities[i]=(instance_find(obj_City,i))
-}</code>
+}
+instance_create(0,0,obj_Controller)</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -53,19 +113,11 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_Controller" x="0" y="0" name="inst_26C6549A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Debug" x="0" y="0" name="inst_0C0D3B08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_UnitSpawner" x="32" y="160" name="inst_AC80B045" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_City" x="448" y="352" name="inst_109BB4C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_City" x="480" y="64" name="inst_2D8D8C76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_City" x="32" y="736" name="inst_E9D619C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_City" x="512" y="704" name="inst_E5F1BF37" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_City" x="288" y="576" name="inst_ECE43F8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Colony" x="1184" y="544" name="inst_4D73FBFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Colony" x="1184" y="704" name="inst_F7651784" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Debug" x="64" y="0" name="inst_0C0D3B08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_UnitSpawner" x="608" y="416" name="inst_AC80B045" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Infantry" x="352" y="224" name="inst_A618FDD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Infantry" x="512" y="224" name="inst_F4272942" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_TankSpawner" x="32" y="288" name="inst_C2CE0D0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_TankSpawner" x="416" y="448" name="inst_C2CE0D0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Tanks" x="416" y="96" name="inst_BBCF3C32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Hospital" x="224" y="448" name="inst_8BD9A506" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
