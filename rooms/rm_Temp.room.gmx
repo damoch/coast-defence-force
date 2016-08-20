@@ -10,9 +10,11 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>//room creation code
+  <code>randomize();
+//room creation code
 SPAWNPOINTS_NUMBER=5
 CITIES_NUMBER=7
+evac_sprite=spr_TempEvacPoint
 //set (choose) invasion direction
 invasion_direction=choose("UP","LEFT","RIGHT","DOWN")
 spawn_x=0
@@ -21,42 +23,61 @@ spawn_y=0;
 lowest_x=0
 highest_x=0
 
+sdads=0
+
 lowest_y=0
 highest_y=0
 
-//set random ranges
+//evacuation point position
+
+evac_point_x=0
+evac_point_y=0
+
+//set irandom ranges
 switch(invasion_direction){
     case "UP":
         lowest_x=0
         highest_x=room_width
         lowest_y=-256
         highest_y=0
+        evac_point_x=irandom(room_width)
+        //change value after sprite change!
+        evac_point_y=room_height-sprite_get_height(evac_sprite)
         break;
     case "LEFT":
         lowest_x=-256
         highest_x=0
         lowest_y=0
         highest_y=room_height
+        evac_point_x=room_width-sprite_get_width(evac_sprite)
+        //change value after sprite change!
+        evac_point_y=irandom(room_height)
         break;
     case "DOWN":
         lowest_x=0
         highest_x=room_width
         lowest_y=room_height
         highest_y=room_height+256
+        evac_point_x=irandom(room_width)
+        //change value after sprite change!
+        evac_point_y=sprite_get_height(evac_sprite)
         break;
     case "RIGHT":
         lowest_x=room_width
         highest_x=room_width+256
         lowest_y=0
         highest_y=room_height
+        evac_point_x=sprite_get_width(evac_sprite)
+        //change value after sprite change!
+        evac_point_y=irandom(room_height)
         break;
 } 
 
 
 //create monsters spawnpoints
 for(i=0;i&lt;SPAWNPOINTS_NUMBER;i++){
-    spawn_x=random_range(lowest_x,highest_x)
-    spawn_y=random_range(lowest_y,highest_y)
+    spawn_x=irandom_range(lowest_x,highest_x)
+    spawn_y=irandom_range(lowest_y,highest_y)
     instance_create(spawn_x,spawn_y,obj_Colony)
 }
 //set lowest and highest ranges
@@ -88,11 +109,17 @@ switch(invasion_direction){
         break;
 } 
 
-//create cities and initiate cities list
+//create evac point
+instance_create(evac_point_x,evac_point_y,obj_EvacuationPoint)
+
+//create cities
 for(i=0;i&lt;CITIES_NUMBER;i++){
-    spawn_x=random_range(lowest_x,highest_x)
-    spawn_y=random_range(lowest_y,highest_y)
-    city=instance_create(spawn_x,spawn_y,obj_City)
+    spawn_x=irandom_range(lowest_x,highest_x)
+    spawn_y=irandom_range(lowest_y,highest_y)
+    if(!(place_meeting(spawn_x,spawn_y,obj_City)))
+        city=instance_create(spawn_x,spawn_y,obj_City)
+    else
+        CITIES_NUMBER++
 
 }
 
@@ -139,12 +166,6 @@ instance_create(0,0,obj_Controller)</code>
   </views>
   <instances>
     <instance objName="obj_Debug" x="64" y="0" name="inst_0C0D3B08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_UnitSpawner" x="608" y="416" name="inst_AC80B045" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Infantry" x="352" y="224" name="inst_A618FDD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Infantry" x="512" y="224" name="inst_F4272942" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_TankSpawner" x="416" y="448" name="inst_C2CE0D0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Tanks" x="416" y="96" name="inst_BBCF3C32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Hospital" x="224" y="448" name="inst_8BD9A506" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -16,6 +16,7 @@
     <sprite>sprites\spr_TempBigMonster</sprite>
     <sprite>sprites\spr_TempHospital</sprite>
     <sprite>sprites\spr_TempCivilian</sprite>
+    <sprite>sprites\spr_TempEvacPoint</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -24,6 +25,7 @@
     <object>objects\obj_Infantry</object>
     <object>objects\obj_Tanks</object>
     <object>objects\obj_Monsters</object>
+    <object>objects\obj_EvacuationPoint</object>
     <object>objects\obj_BigMonster</object>
     <object>objects\obj_Debug</object>
     <object>objects\obj_Civilian</object>

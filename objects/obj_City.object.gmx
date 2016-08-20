@@ -84,8 +84,23 @@ status_text="Status obrony: "+string(status)+"%"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-cv=instance_create(x-30,y,obj_Civilian)
+            <string>evac_point = instance_nearest(x,y,obj_EvacuationPoint)
+
+offset_x=0
+offset_y=0
+
+//evac setup
+if(evac_point.x&lt;x)
+    offset_x=-30  
+else
+    offset_x=30
+
+if(evac_point.y&lt;y)
+    offset_y=-30
+else
+    offset_y=30
+
+cv=instance_create(x+offset_x,y+offset_y,obj_Civilian)
 //show_message(string(cv.id))
 population-=random(2)
 alarm[2]=15
