@@ -119,13 +119,20 @@ else
 //alarm[1]=150
 */
 
-
-target_city=obj_Controller.cities[random(instance_number(obj_City))] 
-//if(instance_exists(
-targetX=target_city.x
-targetY=target_city.y
-move_towards_point(targetX,targetY,unit_speed)
-
+if(!instance_exists(obj_SpecialForces)){
+    target_city=obj_Controller.cities[random(instance_number(obj_City))] 
+    targetX=target_city.x
+    targetY=target_city.y
+    move_towards_point(targetX,targetY,unit_speed)
+}
+else
+{
+    target_city=instance_nearest(x,y,obj_SpecialForces)
+    targetX=target_city.x
+    targetY=target_city.y
+    move_towards_point(targetX,targetY,unit_speed)
+}
+alarm[1]=450
 </string>
           </argument>
         </arguments>
@@ -172,10 +179,10 @@ move_towards_point(targetX,targetY,unit_speed)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(target_unit==0||target_city==0){
-    if(instance_exists(obj_City)){target_city=instance_nearest(x,y,obj_City) }
-    if(instance_exists(obj_Infantry)){target_unit=instance_nearest(x,y,obj_Infantry) }
-}
+            <string>//if(target_unit==0||target_city==0){
+ //   if(instance_exists(obj_City)){target_city=instance_nearest(x,y,obj_City) }
+  //  if(instance_exists(obj_Infantry)){target_unit=instance_nearest(x,y,obj_Infantry) }
+//}
 
 if(status&lt;=0){
     obj_Controller.monsters_killed++;
@@ -184,6 +191,35 @@ if(status&lt;=0){
 status_text=string(status)
 
 if(colliders==2)instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_SpecialForces">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//colliders++;
+if(!reloading){
+reloading=true
+other.status-=75;
+alarm[0]=60
+alarm[1]=60}
+speed=0
 </string>
           </argument>
         </arguments>

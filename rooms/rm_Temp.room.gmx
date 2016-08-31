@@ -10,11 +10,15 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>randomize();
+  <code>//i am using this to randomize set
+//might comment this line for debug
+randomize();
+
 //room creation code
 SPAWNPOINTS_NUMBER=5
 CITIES_NUMBER=7
 evac_sprite=spr_TempEvacPoint
+infa_sprite=spr_TempUnitSpawner
 //set (choose) invasion direction
 invasion_direction=choose("UP","LEFT","RIGHT","DOWN")
 spawn_x=0
@@ -29,9 +33,12 @@ lowest_y=0
 highest_y=0
 
 //evacuation point position
-
 evac_point_x=0
 evac_point_y=0
+
+//infantrySpawner position
+infa_spawn_x=0
+infa_spawn_y=0
 
 //set irandom ranges
 switch(invasion_direction){
@@ -40,36 +47,48 @@ switch(invasion_direction){
         highest_x=room_width
         lowest_y=-256
         highest_y=0
+        
         evac_point_x=irandom(room_width)
-        //change value after sprite change!
         evac_point_y=room_height-sprite_get_height(evac_sprite)
+                
+        infa_spawn_x=irandom(room_width)
+        infa_spawn_y=room_height-sprite_get_height(infa_sprite)/2
         break;
     case "LEFT":
         lowest_x=-256
         highest_x=0
         lowest_y=0
         highest_y=room_height
-        evac_point_x=room_width-sprite_get_width(evac_sprite)
-        //change value after sprite change!
+        
+        evac_point_x=room_width-sprite_get_width(evac_sprite)/2
         evac_point_y=irandom(room_height)
+        
+        infa_spawn_x=room_width-sprite_get_width(infa_sprite)
+        infa_spawn_y=irandom(room_height)
         break;
     case "DOWN":
         lowest_x=0
         highest_x=room_width
         lowest_y=room_height
         highest_y=room_height+256
+        
         evac_point_x=irandom(room_width)
-        //change value after sprite change!
         evac_point_y=sprite_get_height(evac_sprite)
+        
+        infa_spawn_x=irandom(room_width)
+        infa_spawn_y=sprite_get_height(infa_sprite)/2
         break;
     case "RIGHT":
         lowest_x=room_width
         highest_x=room_width+256
         lowest_y=0
         highest_y=room_height
+        
         evac_point_x=sprite_get_width(evac_sprite)
-        //change value after sprite change!
         evac_point_y=irandom(room_height)
+        
+        infa_spawn_x=sprite_get_width(infa_sprite)/2
+        infa_spawn_y=irandom(room_height)
         break;
 } 
 
@@ -112,15 +131,19 @@ switch(invasion_direction){
 //create evac point
 instance_create(evac_point_x,evac_point_y,obj_EvacuationPoint)
 
+//create infantry spawn
+instance_create(infa_spawn_x,infa_spawn_y,obj_UnitSpawner)
+
 //create cities
 for(i=0;i&lt;CITIES_NUMBER;i++){
     spawn_x=irandom_range(lowest_x,highest_x)
     spawn_y=irandom_range(lowest_y,highest_y)
-    if(!(place_meeting(spawn_x,spawn_y,obj_City)))
+    if(!(place_meeting(spawn_x,spawn_y,obj_City))){
         city=instance_create(spawn_x,spawn_y,obj_City)
-    else
+        }
+    else{
         CITIES_NUMBER++
-
+        }
 }
 
 
@@ -165,7 +188,7 @@ instance_create(0,0,obj_Controller)</code>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_Debug" x="64" y="0" name="inst_0C0D3B08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Debug" x="0" y="0" name="inst_0C0D3B08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

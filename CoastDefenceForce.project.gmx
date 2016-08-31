@@ -17,12 +17,14 @@
     <sprite>sprites\spr_TempHospital</sprite>
     <sprite>sprites\spr_TempCivilian</sprite>
     <sprite>sprites\spr_TempEvacPoint</sprite>
+    <sprite>sprites\tmp_SpecialForces</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_Controller</object>
     <object>objects\obj_Infantry</object>
+    <object>objects\obj_SpecialForces</object>
     <object>objects\obj_Tanks</object>
     <object>objects\obj_Monsters</object>
     <object>objects\obj_EvacuationPoint</object>
@@ -36,11 +38,13 @@
     <object>objects\obj_Colony</object>
     <object>objects\obj_UnitSpawner</object>
     <object>objects\obj_TankSpawner</object>
+    <object>objects\obj_SpecialForcesSpawner</object>
     <objects name="OutOfUsage">
       <object>objects\obj_Armour</object>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\mission</room>
     <room>rooms\rm_Temp</room>
   </rooms>
   <help>
