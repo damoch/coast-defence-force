@@ -18,6 +18,9 @@
     <sprite>sprites\spr_TempCivilian</sprite>
     <sprite>sprites\spr_TempEvacPoint</sprite>
     <sprite>sprites\tmp_SpecialForces</sprite>
+    <sprite>sprites\spr_TempAirStrike</sprite>
+    <sprite>sprites\spr_TempAirStrikeMarker</sprite>
+    <sprite>sprites\spr_TempPlane</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -42,6 +45,9 @@
     <objects name="OutOfUsage">
       <object>objects\obj_Armour</object>
     </objects>
+    <object>objects\gui_AirStrikeButton</object>
+    <object>objects\gui_AirStrikeMarker</object>
+    <object>objects\obj_Plane</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\mission</room>
