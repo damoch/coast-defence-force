@@ -38,6 +38,8 @@ population=100
 population_text="Populacja: "+string(population)+"%"
 status_text="Status obrony: "+string(status)+"%"
 
+airstrike=false
+
 
 </string>
           </argument>

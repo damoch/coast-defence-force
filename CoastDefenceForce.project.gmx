@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_Colony</sprite>
+    <sprite>sprites\spr_TempHelos</sprite>
     <sprite>sprites\spr_TempArmour</sprite>
     <sprite>sprites\spr_TempMonsters</sprite>
     <sprite>sprites\spr_TempInfantry</sprite>
@@ -17,10 +18,12 @@
     <sprite>sprites\spr_TempHospital</sprite>
     <sprite>sprites\spr_TempCivilian</sprite>
     <sprite>sprites\spr_TempEvacPoint</sprite>
+    <sprite>sprites\spr_TempBoom</sprite>
     <sprite>sprites\tmp_SpecialForces</sprite>
     <sprite>sprites\spr_TempAirStrike</sprite>
     <sprite>sprites\spr_TempAirStrikeMarker</sprite>
     <sprite>sprites\spr_TempPlane</sprite>
+    <sprite>sprites\spr_TempHeloSuport</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -48,6 +51,9 @@
     <object>objects\gui_AirStrikeButton</object>
     <object>objects\gui_AirStrikeMarker</object>
     <object>objects\obj_Plane</object>
+    <object>objects\obj_AirStrikeField</object>
+    <object>objects\gui_HeloSupportButton</object>
+    <object>objects\obj_Helicopters</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\mission</room>
