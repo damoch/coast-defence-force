@@ -50,7 +50,7 @@
             <kind>1</kind>
             <string>if(!support_activated){
     support_activated=true
-    obj_Helicopters.alarm[0]=1
+    obj_Helicopters.alarm[2]=1
     }
 </string>
           </argument>
