@@ -49,6 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>strike_possible=true
+image_alpha=1
 </string>
           </argument>
         </arguments>
@@ -74,6 +75,7 @@
             <string>if(strike_possible){
     strike_possible=false
     instance_create(mouse_x,mouse_y,gui_AirStrikeMarker)
+    image_alpha=0
 }
 </string>
           </argument>

@@ -101,11 +101,14 @@ if(evac_point.y&lt;y)
     offset_y=-30
 else
     offset_y=30
-
-cv=instance_create(x+offset_x,y+offset_y,obj_Civilian)
+if(evacuater==0){
+    cv=instance_create(x+offset_x,y+offset_y,obj_Civilian)
+    population-=random(2)
+    alarm[2]=15
+}
 //show_message(string(cv.id))
-population-=random(2)
-alarm[2]=15
+
+
 
 </string>
           </argument>

@@ -33,7 +33,36 @@ targetY=0
 
 unit_speed=3
 
+target_id=0
+
+target_big_id=0
+
 active=false
+
+attacking=false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>attacking=false
 </string>
           </argument>
         </arguments>
@@ -90,6 +119,7 @@ targetX=start_x
 targetY=start_y
 active=false
 alarm[0]=1
+gui_HeloSupportButton.alarm[0]=300
 </string>
           </argument>
         </arguments>
@@ -112,8 +142,7 @@ alarm[0]=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-move_towards_point(targetX,targetY,unit_speed)
+            <string>move_towards_point(targetX,targetY,unit_speed)
 </string>
           </argument>
         </arguments>
@@ -138,6 +167,24 @@ move_towards_point(targetX,targetY,unit_speed)
             <kind>1</kind>
             <string>//stop moving when destination is reached
 if(distance_to_point(targetX,targetY)==0)speed=0
+
+if(distance_to_object(instance_nearest(x,y,obj_Monsters))&lt;96){
+    target_id=instance_nearest(x,y,obj_Monsters)
+}
+else if(distance_to_object(instance_nearest(x,y,obj_BigMonster))&lt;96){
+    target_id=instance_nearest(x,y,obj_BigMonster)
+}
+else
+{
+    target_id=0
+}
+
+if(target_id&gt;0 &amp;&amp; !attacking){
+    target_id.status-=25
+    attacking=true
+    alarm[3]=25
+}
+    
 </string>
           </argument>
         </arguments>
