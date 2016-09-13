@@ -25,18 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>months[0]="styczen"
-months[1]="luty"
-months[2]="marzec"
-months[3]="kwiecien"
-months[4]="maj"
-months[5]="czerwiec"
-months[6]="lipiec"
-months[7]="sierpien"
-months[8]="wrzesien"
-months[9]="pazdziernik"
-months[10]="listopad"
-months[11]="grudzien"
+            <string>time=6
+day=1
 
 //only for prototype
 /*
@@ -65,18 +55,15 @@ current_unit=undefined;
 credits=500;
 
 //credits+=obj_City.instance_count*200
-time=6
-day=floor(random(32))
-month=random(12)
+
 //date string will use monster multiplier, because why not
-day_string=string(day)+" "+string_upper(months[month])
 
 people_killed=0
 people_saved=0
 
 time_text=string(time)+":00"
 
-alarm[0]=300
+alarm[0]=300 //300frames = 1hour
 
 /*VERY IMPORTANT!
  *Panic level declaration
@@ -165,7 +152,10 @@ for(i=0;i&lt;instance_number(obj_City);i++){
             <kind>1</kind>
             <string>//hour event
 
-if(time==23){time=0;day++if(day&gt;31){day=1;month++if(month&gt;11)month=0}}
+if(time==23){
+    time=0;
+    day++
+    }
 else time++
 
 if(instance_number(obj_Infantry)&lt;=instance_number(obj_Monsters))

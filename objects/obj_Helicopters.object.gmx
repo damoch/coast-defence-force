@@ -112,14 +112,15 @@ active=true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//move_towards_point(start_x,start_y,unit_speed)
-//active=false
+            <string>//return to base
 
 targetX=start_x
 targetY=start_y
 active=false
+if(obj_Controller.current_unit==id)
+    obj_Controller.current_unit=undefined
 alarm[0]=1
-gui_HeloSupportButton.alarm[0]=300
+gui_HeloSupportButton.alarm[0]=600
 </string>
           </argument>
         </arguments>

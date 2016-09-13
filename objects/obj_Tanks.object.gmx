@@ -147,8 +147,8 @@ if(status&lt;30)will_of_fight-=15
 else will_of_fight+=25
 if(recent_victory)will_of_fight+=10
 if(obj_Controller.panic_level&gt;will_of_fight){
-        targetX=x-256;
-        targetY=y
+        targetX=obj_EvacuationPoint.x;
+        targetY=obj_EvacuationPoint.y
         move_towards_point(targetX,targetY,unit_speed);
         alarm[3]=30
 }

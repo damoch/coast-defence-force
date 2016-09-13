@@ -49,7 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>strike_possible=true
-image_alpha=1
+image_alpha=1.0
 </string>
           </argument>
         </arguments>
@@ -73,6 +73,7 @@ image_alpha=1
           <argument>
             <kind>1</kind>
             <string>if(strike_possible){
+    obj_Controller.current_unit=undefined
     strike_possible=false
     instance_create(mouse_x,mouse_y,gui_AirStrikeMarker)
     image_alpha=0
