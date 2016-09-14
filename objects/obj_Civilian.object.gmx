@@ -3,7 +3,7 @@
   <spriteName>spr_TempCivilian</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-500</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -99,7 +99,7 @@ alarm[0]=60
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_message("dsadasd")
+            <string>obj_Controller.panic_level++;
 obj_Controller.people_killed+=100
 instance_destroy()
 </string>

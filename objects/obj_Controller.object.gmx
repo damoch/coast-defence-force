@@ -179,7 +179,7 @@ if(time==6){credits+=instance_number(obj_City)*100;}
 if(time%6 == 0){
     if(monsters_killed&gt;units_killed)monsters_multiplier++
 }
-time_text="CZAS: "+string(time)+":00"
+time_text="CZAS: "+string(time)+":00 DZIEN: "+string(day)
 panic_string="POZIOM PANIKI: "+string(panic_level)
 //show_message(string(room_speed))
 credits+=instance_number(obj_City)*10

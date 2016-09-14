@@ -40,6 +40,8 @@ target_big_id=0
 active=false
 
 attacking=false
+
+attack_range=96
 </string>
           </argument>
         </arguments>
@@ -169,10 +171,19 @@ gui_HeloSupportButton.alarm[0]=600
             <string>//stop moving when destination is reached
 if(distance_to_point(targetX,targetY)==0)speed=0
 
-if(distance_to_object(instance_nearest(x,y,obj_Monsters))&lt;96){
+if(instance_exists(obj_SpecialForces)){
+    if(distance_to_object(instance_nearest(x,y,obj_SpecialForces))&lt;128)
+        attack_range=128
+    else
+        attack_range=96
+}
+else
+    attack_range=96
+
+if(distance_to_object(instance_nearest(x,y,obj_Monsters))&lt;attack_range){
     target_id=instance_nearest(x,y,obj_Monsters)
 }
-else if(distance_to_object(instance_nearest(x,y,obj_BigMonster))&lt;96){
+else if(distance_to_object(instance_nearest(x,y,obj_BigMonster))&lt;attack_range){
     target_id=instance_nearest(x,y,obj_BigMonster)
 }
 else

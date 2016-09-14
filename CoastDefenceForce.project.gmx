@@ -19,6 +19,7 @@
     <sprite>sprites\spr_TempCivilian</sprite>
     <sprite>sprites\spr_TempEvacPoint</sprite>
     <sprite>sprites\spr_TempBoom</sprite>
+    <sprite>sprites\spr_TempBigBoom</sprite>
     <sprite>sprites\tmp_SpecialForces</sprite>
     <sprite>sprites\spr_TempAirStrike</sprite>
     <sprite>sprites\spr_TempAirStrikeMarker</sprite>
@@ -38,8 +39,15 @@
     <object>objects\obj_Debug</object>
     <object>objects\obj_Civilian</object>
     <object>objects\obj_Hospital</object>
+    <object>objects\obj_Plane</object>
     <object>objects\obj_AbandonedCity</object>
     <object>objects\obj_City</object>
+    <object>objects\gui_AirStrikeMarker</object>
+    <object>objects\gui_HeloSupportButton</object>
+    <object>objects\obj_AirStrikeField</object>
+    <object>objects\obj_Helicopters</object>
+    <object>objects\gui_AirStrikeButton</object>
+    <object>objects\obj_AirStrikeHugeField</object>
     <object>objects\obj_MonsterSpawner</object>
     <object>objects\obj_Colony</object>
     <object>objects\obj_UnitSpawner</object>
@@ -48,12 +56,6 @@
     <objects name="OutOfUsage">
       <object>objects\obj_Armour</object>
     </objects>
-    <object>objects\gui_AirStrikeButton</object>
-    <object>objects\gui_AirStrikeMarker</object>
-    <object>objects\obj_Plane</object>
-    <object>objects\obj_AirStrikeField</object>
-    <object>objects\gui_HeloSupportButton</object>
-    <object>objects\obj_Helicopters</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\mission</room>
