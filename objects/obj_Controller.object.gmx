@@ -28,6 +28,8 @@
             <string>time=6
 day=1
 
+draw_set_font(display_font)
+
 //only for prototype
 /*
 welcome_message_one="Witaj! Aby ewakuowac miasto (pomaranczowe kwadraty) musisz umiescic w nim jednostke piechoty i czekac az populacja spadnie do zera"
@@ -77,6 +79,9 @@ panic_string="POZIOM PANIKI: "+string(panic_level)
 
 monsters_killed=0
 units_killed=0
+
+game_paused=false
+
 </string>
           </argument>
         </arguments>
