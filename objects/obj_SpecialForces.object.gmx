@@ -312,7 +312,7 @@ if(status&lt;=0){
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_City">
+    <event eventtype="4" ename="obj_Monsters">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -329,15 +329,19 @@ if(status&lt;=0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if(!evacuating){
-    evacuating=true
-    show_message(string(self.id)+" "+string(instance_nearest(x,y,obj_City).evacuater))
-    if(other.evacuater==self.id){
-        show_message("dsadas")
-        other.population-=random(10)
-        }
-    alarm[5]=30
-}*/
+            <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
+    target.status-=2;
+    reloading=true
+    alarm[1]=15
+    if(!panic_mode)alarm[2]=30
+}
+if(target==undefined){
+    recent_victory=true;
+    alarm[4]=600;
+    }
+    
+
+
 </string>
           </argument>
         </arguments>
@@ -377,7 +381,7 @@ if(target==undefined){
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Monsters">
+    <event eventtype="4" ename="obj_City">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -394,19 +398,15 @@ if(target==undefined){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
-    target.status-=2;
-    reloading=true
-    alarm[1]=15
-    if(!panic_mode)alarm[2]=30
-}
-if(target==undefined){
-    recent_victory=true;
-    alarm[4]=600;
-    }
-    
-
-
+            <string>/*if(!evacuating){
+    evacuating=true
+    show_message(string(self.id)+" "+string(instance_nearest(x,y,obj_City).evacuater))
+    if(other.evacuater==self.id){
+        show_message("dsadas")
+        other.population-=random(10)
+        }
+    alarm[5]=30
+}*/
 </string>
           </argument>
         </arguments>

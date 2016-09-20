@@ -93,7 +93,7 @@ move_towards_point(marker_x,marker_y,aircraft_speed)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_BigMonster">
+    <event eventtype="4" ename="obj_Monsters">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -116,7 +116,7 @@ move_towards_point(marker_x,marker_y,aircraft_speed)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Monsters">
+    <event eventtype="4" ename="obj_BigMonster">
       <action>
         <libid>1</libid>
         <id>603</id>

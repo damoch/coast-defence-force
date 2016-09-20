@@ -40,6 +40,8 @@ status_text="Status obrony: "+string(status)+"%"
 
 airstrike=false
 
+show_status=false
+
 
 </string>
           </argument>
@@ -306,6 +308,52 @@ else evacuater=0
         </arguments>
       </action>
     </event>
+    <event eventtype="6" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>show_status=false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>show_status=true
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -324,8 +372,10 @@ else evacuater=0
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_text(x,y-48,population_text)
-draw_text(x,y-66,status_text)
+if(show_status){
+    draw_text(x,y-48,population_text)
+    draw_text(x,y-66,status_text)
+}
 </string>
           </argument>
         </arguments>

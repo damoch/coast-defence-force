@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>creating=false
+
+start_x=obj_EvacuationPoint.x
+start_y=obj_EvacuationPoint.y
 </string>
           </argument>
         </arguments>
@@ -49,7 +52,7 @@
           <argument>
             <kind>1</kind>
             <string>creating=false;
-instance_create(x+64,y,obj_Tanks)
+instance_create(start_x,start_y-64,obj_Tanks)
 </string>
           </argument>
         </arguments>
