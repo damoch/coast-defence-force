@@ -36,6 +36,7 @@
     <sprite>sprites\spr_MonstersCity</sprite>
     <sprite>sprites\spr_Monsters</sprite>
     <sprite>sprites\spr_Civilian</sprite>
+    <sprite>sprites\spr_Base</sprite>
     <sprite>sprites\spr_BigMonster</sprite>
     <sprite>sprites\spr_Plane</sprite>
     <sprite>sprites\spr_AntiAircraft</sprite>
@@ -43,8 +44,15 @@
       <sprite>sprites\gui_TempMenuButton</sprite>
       <sprite>sprites\spr_TempPauseMenu</sprite>
       <sprite>sprites\gui_SpawnTank</sprite>
+      <sprite>sprites\gui_ASButton</sprite>
+      <sprite>sprites\gui_AttackHelicopters</sprite>
+      <sprite>sprites\gui_SpecialForces</sprite>
+      <sprite>sprites\gui_Button</sprite>
+      <sprite>sprites\spr_ASMarker</sprite>
       <sprite>sprites\gui_SpawnInfanry</sprite>
       <sprite>sprites\gui_TempButton</sprite>
+      <sprite>sprites\gui_Panel</sprite>
+      <sprite>sprites\gui_GameLogo</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -78,14 +86,17 @@
     </objects>
     <objects name="GUI">
       <object>objects\gui_PauseMenu</object>
+      <object>objects\gui_GameLogoObj</object>
       <objects name="BUTTONS">
         <object>objects\gui_ButtonExit</object>
+        <object>objects\gui_MenuStart</object>
+        <object>objects\gui_CancelButton</object>
+        <object>objects\gui_MenuExit</object>
         <object>objects\gui_AirStrikeMarker</object>
         <object>objects\obj_UnitSpawner</object>
         <object>objects\gui_AirStrikeButton</object>
         <object>objects\gui_HeloSupportButton</object>
         <object>objects\gui_MenuButton</object>
-        <object>objects\gui_CancelButton</object>
         <object>objects\obj_SpecialForcesSpawner</object>
         <object>objects\obj_TankSpawner</object>
       </objects>
@@ -96,9 +107,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\menu</room>
     <room>rooms\mission</room>
     <room>rooms\rm_Temp</room>
-    <room>rooms\menu</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
