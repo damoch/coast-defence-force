@@ -58,12 +58,12 @@
     <objects name="UNUSED">
       <object>objects\obj_MonsterSpawner</object>
       <object>objects\obj_Armour</object>
+      <object>objects\obj_Hospital</object>
     </objects>
     <objects name="GAME">
       <object>objects\obj_Helicopters</object>
       <object>objects\obj_AirStrikeField</object>
       <object>objects\obj_City</object>
-      <object>objects\obj_Hospital</object>
       <object>objects\obj_BigMonster</object>
       <object>objects\obj_Monsters</object>
       <object>objects\obj_EvacuationPoint</object>
@@ -77,17 +77,17 @@
       <object>objects\obj_Infantry</object>
     </objects>
     <objects name="GUI">
-      <object>objects\gui_HeloSupportButton</object>
-      <object>objects\obj_SpecialForcesSpawner</object>
-      <object>objects\gui_AirStrikeButton</object>
-      <object>objects\gui_AirStrikeMarker</object>
-      <object>objects\obj_TankSpawner</object>
-      <object>objects\obj_UnitSpawner</object>
-      <object>objects\gui_MenuButton</object>
       <object>objects\gui_PauseMenu</object>
       <objects name="BUTTONS">
         <object>objects\gui_ButtonExit</object>
+        <object>objects\gui_AirStrikeMarker</object>
+        <object>objects\obj_UnitSpawner</object>
+        <object>objects\gui_AirStrikeButton</object>
+        <object>objects\gui_HeloSupportButton</object>
+        <object>objects\gui_MenuButton</object>
         <object>objects\gui_CancelButton</object>
+        <object>objects\obj_SpecialForcesSpawner</object>
+        <object>objects\obj_TankSpawner</object>
       </objects>
     </objects>
     <objects name="MISC">

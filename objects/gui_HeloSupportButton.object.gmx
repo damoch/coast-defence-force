@@ -3,7 +3,7 @@
   <spriteName>spr_TempHeloSuport</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -33,6 +33,8 @@ msg_x=0
 msg_y=0
 
 draw_flag=false
+
+image_alpha=1
 </string>
           </argument>
         </arguments>
@@ -128,7 +130,7 @@ image_alpha=1
             <string>if(!support_activated){
     support_activated=true
     obj_Helicopters.alarm[2]=1
-    image_alpha=0
+    image_alpha=0.5
     }
 </string>
           </argument>

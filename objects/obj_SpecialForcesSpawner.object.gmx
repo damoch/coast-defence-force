@@ -3,7 +3,7 @@
   <spriteName>spr_TempUnitSpawner</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -30,12 +30,14 @@
 start_x=obj_EvacuationPoint.x
 start_y=obj_EvacuationPoint.y
 
-message="Jednostki specjalne (koszt: 400)"
+message="Sily specjalne (koszt: 400)"
 
 msg_x=0
 msg_y=0
 
 draw_flag=false
+
+image_alpha=1
 </string>
           </argument>
         </arguments>
@@ -60,6 +62,7 @@ draw_flag=false
             <kind>1</kind>
             <string>creating=false;
 instance_create(start_x,start_y-64,obj_SpecialForces)
+image_alpha=1
 </string>
           </argument>
         </arguments>
@@ -132,6 +135,7 @@ instance_create(start_x,start_y-64,obj_SpecialForces)
     creating=true;
     alarm[0]=90;
     obj_Controller.credits-=400
+    image_alpha=0.5
 }
 </string>
           </argument>

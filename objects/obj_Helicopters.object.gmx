@@ -301,7 +301,7 @@ if(target_id&gt;0 &amp;&amp; !attacking){
             <string>draw_self()
 
 if(show_status){
-    draw_text(x,y-48,status_text)
+    draw_text(x-128,y-48,status_text) 
 }
 </string>
           </argument>

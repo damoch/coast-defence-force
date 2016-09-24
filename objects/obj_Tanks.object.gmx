@@ -46,6 +46,9 @@ reloading=false;
 
 will_of_fight=100;
 
+name="Jednostki pancerne"
+name_drawn=""
+
 
 </string>
           </argument>
@@ -243,8 +246,14 @@ else target=0;
 
 
 //displaying unit status
-if(distance_to_point(mouse_x,mouse_y)&lt;20||obj_Controller.current_unit==id)status_text=string(status)
-else status_text=""
+if(distance_to_point(mouse_x,mouse_y)&lt;20||obj_Controller.current_unit==id){
+    status_text="Status jednostki: "+string(status)
+    name_drawn=name
+}
+else{ 
+    status_text=""
+    name_drawn=""
+}
 
 //death
 if(status&lt;=0){
@@ -394,7 +403,9 @@ if(target==undefined){
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_text(x,y-48,status_text)
+
+draw_text(x-128,y-78,name_drawn)
+draw_text(x-128,y-56,status_text)
  
 </string>
           </argument>

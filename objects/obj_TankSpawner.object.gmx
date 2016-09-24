@@ -3,7 +3,7 @@
   <spriteName>gui_SpawnTank</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -30,7 +30,7 @@
 start_x=obj_EvacuationPoint.x
 start_y=obj_EvacuationPoint.y
 
-message="Czolgi (koszt: 200)"
+message="Jednostki pancerne (koszt: 200)"
 
 msg_x=0
 msg_y=0
