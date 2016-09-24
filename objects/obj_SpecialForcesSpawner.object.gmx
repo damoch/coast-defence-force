@@ -30,6 +30,12 @@
 start_x=obj_EvacuationPoint.x
 start_y=obj_EvacuationPoint.y
 
+message="Jednostki specjalne (koszt: 400)"
+
+msg_x=0
+msg_y=0
+
+draw_flag=false
 </string>
           </argument>
         </arguments>
@@ -54,6 +60,52 @@ start_y=obj_EvacuationPoint.y
             <kind>1</kind>
             <string>creating=false;
 instance_create(start_x,start_y-64,obj_SpecialForces)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_flag=false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_flag=true
 </string>
           </argument>
         </arguments>
@@ -104,7 +156,12 @@ instance_create(start_x,start_y-64,obj_SpecialForces)
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_text(x,y-32,"Kliknij aby wyprodukowac czolgi");
+
+if(draw_flag){
+    msg_x=mouse_x-32
+    msg_y=mouse_y-15
+    draw_text(msg_x,msg_y,message)
+}
 </string>
           </argument>
         </arguments>

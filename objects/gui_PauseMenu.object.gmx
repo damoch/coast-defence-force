@@ -28,6 +28,8 @@
             <string>//alarm[0]=60
 instance_create(x,x,gui_CancelButton)
 instance_create(x+64,y,gui_ButtonExit)
+
+message="Czy chcesz wyjsc z gry?"
 </string>
           </argument>
         </arguments>
@@ -91,6 +93,30 @@ with(gui_CancelButton){
 }
 alarm[1]=2
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self()
+draw_text(x,y,message)
 </string>
           </argument>
         </arguments>

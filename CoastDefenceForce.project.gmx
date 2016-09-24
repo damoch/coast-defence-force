@@ -31,15 +31,25 @@
     <sprite>sprites\spr_Tanks</sprite>
     <sprite>sprites\spr_SpecialForces</sprite>
     <sprite>sprites\spr_Helicopters</sprite>
+    <sprite>sprites\spr_AbandondedCity</sprite>
+    <sprite>sprites\spr_City</sprite>
+    <sprite>sprites\spr_MonstersCity</sprite>
+    <sprite>sprites\spr_Monsters</sprite>
+    <sprite>sprites\spr_Civilian</sprite>
+    <sprite>sprites\spr_BigMonster</sprite>
     <sprite>sprites\spr_Plane</sprite>
     <sprite>sprites\spr_AntiAircraft</sprite>
     <sprites name="GUI">
       <sprite>sprites\gui_TempMenuButton</sprite>
       <sprite>sprites\spr_TempPauseMenu</sprite>
+      <sprite>sprites\gui_SpawnTank</sprite>
+      <sprite>sprites\gui_SpawnInfanry</sprite>
       <sprite>sprites\gui_TempButton</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bck_Main</background>
+  </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
     <font>fonts\display_font</font>
