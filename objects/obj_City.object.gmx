@@ -65,7 +65,7 @@ show_status=false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//instance_create(x,y,obj_AbandonedCity);
+            <string>instance_create(x,y,obj_AbandonedCity);
 </string>
           </argument>
         </arguments>
@@ -106,8 +106,12 @@ else
 if(evacuater==0){
     cv=instance_create(x+offset_x,y+offset_y,obj_Civilian)
     population-=random(2)
+    population_text="Populacja: "+string(population)+"%"
     alarm[2]=15
 }
+
+if(population&lt;=0)
+        instance_change(obj_AbandonedCity,true)
 //show_message(string(cv.id))
 
 
