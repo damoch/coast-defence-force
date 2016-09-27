@@ -112,6 +112,8 @@ if(evacuater==0){
 
 if(population&lt;=0)
         instance_change(obj_AbandonedCity,true)
+else if(status&lt;=0 &amp;&amp; population&gt;=0)
+        instance_change(obj_Colony,true)
 //show_message(string(cv.id))
 
 

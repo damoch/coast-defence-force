@@ -4,7 +4,17 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="music">
+      <sound>sound\mu_mainMenu</sound>
+      <sounds name="scores">
+        <sound>sound\lightDubstep</sound>
+        <sound>sound\waiting</sound>
+        <sound>sound\thisiswhereitbegins</sound>
+        <sound>sound\boom</sound>
+      </sounds>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprites name="TEMP">
       <sprite>sprites\tmp_SpecialForces</sprite>
@@ -53,6 +63,7 @@
       <sprite>sprites\gui_TempButton</sprite>
       <sprite>sprites\gui_Panel</sprite>
       <sprite>sprites\gui_GameLogo</sprite>
+      <sprite>sprites\cur_Cursor</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -100,16 +111,19 @@
         <object>objects\obj_SpecialForcesSpawner</object>
         <object>objects\obj_TankSpawner</object>
       </objects>
+      <object>objects\gui_VictoryScreen</object>
     </objects>
     <objects name="MISC">
       <object>objects\obj_Controller</object>
       <object>objects\obj_Debug</object>
+      <object>objects\obj_MusicPlayer</object>
+      <object>objects\eff_FadeToBlack</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\menu</room>
-    <room>rooms\mission</room>
     <room>rooms\rm_Temp</room>
+    <room>rooms\mission</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

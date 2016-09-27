@@ -130,10 +130,13 @@ else
 
 if(!instance_exists(obj_SpecialForces)){
 target_city=obj_Controller.cities[random(instance_number(obj_City))] 
-//if(instance_exists(
-targetX=target_city.x
-targetY=target_city.y
-move_towards_point(targetX,targetY,unit_speed)
+    if(instance_exists(target_city)){
+        targetX=target_city.x      
+        targetY=target_city.y
+        move_towards_point(targetX,targetY,unit_speed)
+    }
+        else
+            alarm[1]=450
 }
 else
 {

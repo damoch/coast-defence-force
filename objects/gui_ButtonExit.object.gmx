@@ -48,7 +48,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(menu)
+            <string>audio_stop_all()
+var eff;
+
+eff = instance_create( 0, 0, eff_FadeToBlack );
+eff.newRoom = menu;
 </string>
           </argument>
         </arguments>

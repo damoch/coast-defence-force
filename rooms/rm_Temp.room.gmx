@@ -20,7 +20,7 @@ CITIES_NUMBER=7
 evac_sprite=spr_TempEvacPoint
 infa_sprite=spr_TempUnitSpawner
 //set (choose) invasion direction
-invasion_direction=choose("UP","LEFT","RIGHT","DOWN")
+invasion_direction=choose("UP","LEFT","DOWN")
 spawn_x=0
 spawn_y=0;
 
@@ -132,7 +132,7 @@ switch(invasion_direction){
 instance_create(evac_point_x,evac_point_y,obj_EvacuationPoint)
 
 //create infantry spawn
-instance_create(infa_spawn_x,infa_spawn_y,obj_UnitSpawner)
+//instance_create(infa_spawn_x,infa_spawn_y,obj_UnitSpawner)
 
 //create cities
 for(i=0;i&lt;CITIES_NUMBER;i++){
@@ -145,6 +145,15 @@ for(i=0;i&lt;CITIES_NUMBER;i++){
         CITIES_NUMBER++
         }
 }
+//setting buttons
+
+instance_create(40,160,obj_UnitSpawner)
+instance_create(40,256,obj_SpecialForcesSpawner)
+instance_create(40,352,obj_TankSpawner)
+instance_create(40,448,gui_HeloSupportButton)
+instance_create(40,544,gui_AirStrikeButton)
+
+
 
 
 instance_create(0,0,obj_Controller)</code>
@@ -168,7 +177,7 @@ instance_create(0,0,obj_Controller)</code>
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="bck_Main" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -188,7 +197,10 @@ instance_create(0,0,obj_Controller)</code>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_Debug" x="0" y="0" name="inst_0C0D3B08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="gui_MenuButton" x="64" y="32" name="inst_7C0D1077" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Plane" x="256" y="928" name="inst_C017BB7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Helicopters" x="544" y="960" name="inst_806CD0E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_MusicPlayer" x="0" y="0" name="inst_F1A8BCB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
