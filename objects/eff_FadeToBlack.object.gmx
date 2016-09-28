@@ -55,8 +55,12 @@ alarm[0]=fadeSpeed
 fadeAlpha += 0.05;
 if (fadeAlpha &gt;= 1.0)
 {
-    room_goto(newRoom);
-    instance_destroy();
+    if(newRoom==-1)
+        game_end()
+    else{
+        room_goto(newRoom);
+        instance_destroy();
+    }
 }
 </string>
           </argument>

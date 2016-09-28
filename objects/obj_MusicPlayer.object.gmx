@@ -25,10 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>playlist[0]=lightDubstep
-playlist[1]=waiting
-playlist[2]=thisiswhereitbegins
-playlist[3]=boom
+            <string>playlist[0] = thisiswhereitbegins
+playlist[1] = waiting
+playlist[2] = lightDubstep
+playlist[3] = boom
 
 PLAYLIST_LENGTH=4
 

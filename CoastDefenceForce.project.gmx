@@ -80,23 +80,24 @@
       <object>objects\obj_Hospital</object>
     </objects>
     <objects name="GAME">
-      <object>objects\obj_Helicopters</object>
-      <object>objects\obj_AirStrikeField</object>
-      <object>objects\obj_City</object>
-      <object>objects\obj_BigMonster</object>
-      <object>objects\obj_Monsters</object>
-      <object>objects\obj_EvacuationPoint</object>
-      <object>objects\obj_SpecialForces</object>
-      <object>objects\obj_Civilian</object>
       <object>objects\obj_AbandonedCity</object>
-      <object>objects\obj_Colony</object>
-      <object>objects\obj_Tanks</object>
+      <object>objects\obj_AirStrikeField</object>
       <object>objects\obj_AirStrikeHugeField</object>
-      <object>objects\obj_Plane</object>
+      <object>objects\obj_BigMonster</object>
+      <object>objects\obj_City</object>
+      <object>objects\obj_Civilian</object>
+      <object>objects\obj_Colony</object>
+      <object>objects\obj_EvacuationPoint</object>
+      <object>objects\obj_Helicopters</object>
       <object>objects\obj_Infantry</object>
+      <object>objects\obj_Monsters</object>
+      <object>objects\obj_Plane</object>
+      <object>objects\obj_SpecialForces</object>
+      <object>objects\obj_Tanks</object>
     </objects>
     <objects name="GUI">
       <object>objects\gui_PauseMenu</object>
+      <object>objects\gui_VictoryScreen</object>
       <object>objects\gui_GameLogoObj</object>
       <objects name="BUTTONS">
         <object>objects\gui_ButtonExit</object>
@@ -111,7 +112,6 @@
         <object>objects\obj_SpecialForcesSpawner</object>
         <object>objects\obj_TankSpawner</object>
       </objects>
-      <object>objects\gui_VictoryScreen</object>
     </objects>
     <objects name="MISC">
       <object>objects\obj_Controller</object>

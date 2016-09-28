@@ -255,7 +255,7 @@ speed=0
             <kind>1</kind>
             <string>if(!reloading){
 reloading=true
-other.status-=15;
+other.status-=45;
 alarm[0]=60}
 speed=0
 </string>
@@ -280,8 +280,8 @@ speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[1]=1
-status=100
+            <string>if(target_city==id)
+        alarm[1]=1
 </string>
           </argument>
         </arguments>

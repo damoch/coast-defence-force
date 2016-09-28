@@ -113,11 +113,18 @@ draw_offset=sprite_get_width(gui_Button)+10
             <string>//game over event
 
 //show_message("ZABICI: "+string(people_killed)+" OCALENI: "+string(people_saved))
+if(!obj_Controller.game_paused){
+    obj_Controller.game_paused=true
+    instance_deactivate_all( false )
+    
 instance_create(room_width/2,room_height/2,gui_VictoryScreen)
 gui_VictoryScreen.deaths=people_killed
 gui_VictoryScreen.savings=people_saved
 
 gui_VictoryScreen.alarm[0]=10
+    //show_message("zapauzowan")
+}
+
 </string>
           </argument>
         </arguments>
@@ -241,29 +248,6 @@ if(mouse_check_button_pressed(mb_right)&amp;&amp;current_unit!=undefined){
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="16">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>alarm[2]=1
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -315,6 +299,29 @@ if(panic_level&lt;0)
           <argument>
             <kind>1</kind>
             <string>time=4
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[2]=1
 </string>
           </argument>
         </arguments>

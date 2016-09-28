@@ -53,6 +53,7 @@ msg_x=0
 msg_y=0
 
 draw_flag=false
+search_flag=false
 </string>
           </argument>
         </arguments>
@@ -282,8 +283,8 @@ speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[1]=1
-status=100
+            <string>if(target_city==id)
+        alarm[1]=1
 </string>
           </argument>
         </arguments>
