@@ -8,48 +8,14 @@
     <sounds name="music">
       <sound>sound\mu_mainMenu</sound>
       <sounds name="scores">
-        <sound>sound\lightDubstep</sound>
-        <sound>sound\waiting</sound>
-        <sound>sound\thisiswhereitbegins</sound>
         <sound>sound\boom</sound>
+        <sound>sound\lightDubstep</sound>
+        <sound>sound\thisiswhereitbegins</sound>
+        <sound>sound\waiting</sound>
       </sounds>
     </sounds>
   </sounds>
   <sprites name="sprites">
-    <sprites name="TEMP">
-      <sprite>sprites\tmp_SpecialForces</sprite>
-      <sprite>sprites\spr_TempHeloSuport</sprite>
-      <sprite>sprites\spr_TempAbandonedCity</sprite>
-      <sprite>sprites\spr_TempBigBoom</sprite>
-      <sprite>sprites\spr_Colony</sprite>
-      <sprite>sprites\spr_TempHelos</sprite>
-      <sprite>sprites\spr_TempMonsters</sprite>
-      <sprite>sprites\spr_TempArmour</sprite>
-      <sprite>sprites\spr_TempEvacPoint</sprite>
-      <sprite>sprites\spr_TempCity</sprite>
-      <sprite>sprites\spr_TempUnitSpawner</sprite>
-      <sprite>sprites\spr_TempBigMonster</sprite>
-      <sprite>sprites\spr_TempCivilian</sprite>
-      <sprite>sprites\spr_TempBoom</sprite>
-      <sprite>sprites\spr_TempInfantry</sprite>
-      <sprite>sprites\spr_TempHospital</sprite>
-      <sprite>sprites\spr_TempAirStrikeMarker</sprite>
-      <sprite>sprites\spr_TempPlane</sprite>
-      <sprite>sprites\spr_TempAirStrike</sprite>
-    </sprites>
-    <sprite>sprites\spr_Infantry</sprite>
-    <sprite>sprites\spr_Tanks</sprite>
-    <sprite>sprites\spr_SpecialForces</sprite>
-    <sprite>sprites\spr_Helicopters</sprite>
-    <sprite>sprites\spr_AbandondedCity</sprite>
-    <sprite>sprites\spr_City</sprite>
-    <sprite>sprites\spr_MonstersCity</sprite>
-    <sprite>sprites\spr_Monsters</sprite>
-    <sprite>sprites\spr_Civilian</sprite>
-    <sprite>sprites\spr_Base</sprite>
-    <sprite>sprites\spr_BigMonster</sprite>
-    <sprite>sprites\spr_Plane</sprite>
-    <sprite>sprites\spr_AntiAircraft</sprite>
     <sprites name="GUI">
       <sprite>sprites\gui_TempMenuButton</sprite>
       <sprite>sprites\spr_TempPauseMenu</sprite>
@@ -65,6 +31,40 @@
       <sprite>sprites\gui_GameLogo</sprite>
       <sprite>sprites\cur_Cursor</sprite>
     </sprites>
+    <sprite>sprites\spr_AbandondedCity</sprite>
+    <sprite>sprites\spr_AntiAircraft</sprite>
+    <sprite>sprites\spr_Base</sprite>
+    <sprite>sprites\spr_BigMonster</sprite>
+    <sprite>sprites\spr_City</sprite>
+    <sprite>sprites\spr_Civilian</sprite>
+    <sprite>sprites\spr_Helicopters</sprite>
+    <sprite>sprites\spr_Infantry</sprite>
+    <sprite>sprites\spr_Monsters</sprite>
+    <sprite>sprites\spr_MonstersCity</sprite>
+    <sprite>sprites\spr_Plane</sprite>
+    <sprite>sprites\spr_SpecialForces</sprite>
+    <sprite>sprites\spr_Tanks</sprite>
+    <sprites name="TEMP">
+      <sprite>sprites\spr_Colony</sprite>
+      <sprite>sprites\spr_TempAbandonedCity</sprite>
+      <sprite>sprites\spr_TempAirStrike</sprite>
+      <sprite>sprites\spr_TempAirStrikeMarker</sprite>
+      <sprite>sprites\spr_TempArmour</sprite>
+      <sprite>sprites\spr_TempBigBoom</sprite>
+      <sprite>sprites\spr_TempBigMonster</sprite>
+      <sprite>sprites\spr_TempBoom</sprite>
+      <sprite>sprites\spr_TempCity</sprite>
+      <sprite>sprites\spr_TempCivilian</sprite>
+      <sprite>sprites\spr_TempEvacPoint</sprite>
+      <sprite>sprites\spr_TempHelos</sprite>
+      <sprite>sprites\spr_TempHeloSuport</sprite>
+      <sprite>sprites\spr_TempHospital</sprite>
+      <sprite>sprites\spr_TempInfantry</sprite>
+      <sprite>sprites\spr_TempMonsters</sprite>
+      <sprite>sprites\spr_TempPlane</sprite>
+      <sprite>sprites\spr_TempUnitSpawner</sprite>
+      <sprite>sprites\tmp_SpecialForces</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_Main</background>
@@ -74,11 +74,6 @@
     <font>fonts\display_font</font>
   </fonts>
   <objects name="objects">
-    <objects name="UNUSED">
-      <object>objects\obj_MonsterSpawner</object>
-      <object>objects\obj_Armour</object>
-      <object>objects\obj_Hospital</object>
-    </objects>
     <objects name="GAME">
       <object>objects\obj_AbandonedCity</object>
       <object>objects\obj_AirStrikeField</object>
@@ -96,34 +91,41 @@
       <object>objects\obj_Tanks</object>
     </objects>
     <objects name="GUI">
-      <object>objects\gui_PauseMenu</object>
-      <object>objects\gui_VictoryScreen</object>
-      <object>objects\gui_GameLogoObj</object>
       <objects name="BUTTONS">
-        <object>objects\gui_ButtonExit</object>
-        <object>objects\gui_MenuStart</object>
-        <object>objects\gui_CancelButton</object>
-        <object>objects\gui_MenuExit</object>
-        <object>objects\gui_AirStrikeMarker</object>
-        <object>objects\obj_UnitSpawner</object>
         <object>objects\gui_AirStrikeButton</object>
+        <object>objects\gui_AirStrikeMarker</object>
+        <object>objects\gui_ButtonExit</object>
+        <object>objects\gui_CancelButton</object>
         <object>objects\gui_HeloSupportButton</object>
         <object>objects\gui_MenuButton</object>
+        <object>objects\gui_MenuExit</object>
+        <object>objects\gui_MenuStart</object>
         <object>objects\obj_SpecialForcesSpawner</object>
         <object>objects\obj_TankSpawner</object>
+        <object>objects\obj_UnitSpawner</object>
       </objects>
+      <object>objects\gui_GameLogoObj</object>
+      <object>objects\gui_PauseMenu</object>
+      <object>objects\gui_VictoryScreen</object>
     </objects>
     <objects name="MISC">
+      <object>objects\eff_FadeToBlack</object>
       <object>objects\obj_Controller</object>
       <object>objects\obj_Debug</object>
       <object>objects\obj_MusicPlayer</object>
-      <object>objects\eff_FadeToBlack</object>
+      <object>objects\obj_credits</object>
+    </objects>
+    <objects name="UNUSED">
+      <object>objects\obj_Armour</object>
+      <object>objects\obj_Hospital</object>
+      <object>objects\obj_MonsterSpawner</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\menu</room>
-    <room>rooms\rm_Temp</room>
     <room>rooms\mission</room>
+    <room>rooms\rm_Temp</room>
+    <room>rooms\room3</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -48,11 +48,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_stop_all()
+            <string>
 var eff;
 
 eff = instance_create( 0, 0, eff_FadeToBlack );
-eff.newRoom = -1;
+eff.newRoom = room3;
 </string>
           </argument>
         </arguments>
