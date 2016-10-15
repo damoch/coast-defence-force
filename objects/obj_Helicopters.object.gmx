@@ -45,6 +45,10 @@ attack_range=96
 
 status_text=""
 show_status=false
+
+firepower=25
+
+current_firepower=firepower
 </string>
           </argument>
         </arguments>
@@ -200,7 +204,12 @@ else
 }
 
 if(target_id&gt;0 &amp;&amp; !attacking){
-    target_id.status-=25
+    if(obj_Controller.time&lt;6)
+        current_firepower=firepower/2
+    else
+        current_firepower=firepower
+
+    target_id.status-=current_firepower
     attacking=true
     alarm[3]=25
 }

@@ -99,51 +99,31 @@ obj_Controller.panic_level-=0.45;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*speed=unit_speed;
-//search for new target every 1.5h (450 frames) of in game time
-if(!(distance_to_object(instance_nearest(x,y,obj_City))&lt;150)){
-    if(instance_exists(obj_City)){target_city=obj_Controller.cities[random(instance_number(obj_City))] }
-    else target_city=0;
-    if(instance_exists(obj_Infantry)){target_unit=instance_nearest(x,y,obj_Infantry) }
-    else target_unit=0;
-}
-else
-{
-    target_city=instance_nearest(x,y,obj_City)
-    targetX=target_city.x
-    targetY=target_city.y
-}
-
-
-
-//show_message(string(target_city))
-if(target_city!=0){
-if(distance_to_object(target_city)&gt;distance_to_object(target_unit))
-    move_towards_point(targetX,targetY,unit_speed)
-}
-else
-    if(target_unit!=0)move_towards_point(target_unit.x,target_unit.y,unit_speed)
-//alarm[1]=150
-*/
-
-if(!instance_exists(obj_SpecialForces)){
-    target_city=obj_Controller.cities[random(instance_number(obj_City))] 
-    if(instance_exists(target_city)){
-        targetX=target_city.x      
+            <string>
+if(obj_Controller.time&lt;6)
+    speed=0
+else{
+    speed=unit_speed
+    if(!instance_exists(obj_SpecialForces)){
+        target_city=obj_Controller.cities[random(instance_number(obj_City))] 
+        if(instance_exists(target_city)){
+            targetX=target_city.x      
+            targetY=target_city.y
+            move_towards_point(targetX,targetY,unit_speed)
+        }
+            else
+                alarm[1]=450
+    }
+    else
+    {
+        target_city=instance_nearest(x,y,obj_SpecialForces)
+        targetX=target_city.x
         targetY=target_city.y
         move_towards_point(targetX,targetY,unit_speed)
     }
-        else
-            alarm[1]=450
-}
-else
-{
-    target_city=instance_nearest(x,y,obj_SpecialForces)
-    targetX=target_city.x
-    targetY=target_city.y
-    move_towards_point(targetX,targetY,unit_speed)
 }
 alarm[1]=450
+
 </string>
           </argument>
         </arguments>

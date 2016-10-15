@@ -52,7 +52,9 @@ will_of_fight=100;
 
 recent_victory=false
 
+current_speed=unit_speed
 
+firepower=0
 </string>
           </argument>
         </arguments>
@@ -229,8 +231,12 @@ else{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-move_towards_point(targetX,targetY,unit_speed)
+            <string>if(obj_Controller.time&lt;6)
+    current_speed=unit_speed/2
+else
+    current_speed=unit_speed
+
+move_towards_point(targetX,targetY,current_speed)
 </string>
           </argument>
         </arguments>
@@ -338,7 +344,11 @@ if(status&lt;=0){
           <argument>
             <kind>1</kind>
             <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
-    target.status-=2;
+    if(obj_Controller.time&lt;6)
+        firepower=7
+    else
+        firepower=15
+    target.status-=firepower;
     reloading=true
     alarm[1]=15
     if(!panic_mode)alarm[2]=30
@@ -404,7 +414,11 @@ if(target==undefined){
           <argument>
             <kind>1</kind>
             <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
-    target.status-=15;
+    if(obj_Controller.time&lt;6)
+        firepower=7
+    else
+        firepower=15
+    target.status-=firepower;
     reloading=true
     alarm[1]=15
     if(!panic_mode)alarm[2]=30

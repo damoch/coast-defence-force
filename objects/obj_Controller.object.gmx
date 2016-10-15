@@ -321,7 +321,7 @@ if(panic_level&lt;0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[2]=1
+            <string>time=2
 </string>
           </argument>
         </arguments>
