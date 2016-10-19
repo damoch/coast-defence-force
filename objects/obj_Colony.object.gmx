@@ -41,6 +41,39 @@ message="Kolonia potworow"
 
 draw_flag=false
 
+is_menu_shown=false
+is_nuked=false
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//obj_EvacuationPoint.target_city=id
+
+//obj_EvacuationPoint.alarm[0]=10
+
+nukeB=instance_create(x,y-40,gui_Nuke)
+abortB=instance_create(x,y-70,gui_AbortNuke)
+gui_Nuke.target=id
+gui_AbortNuke.target=id
 </string>
           </argument>
         </arguments>
@@ -148,6 +181,32 @@ else
           <argument>
             <kind>1</kind>
             <string>draw_flag=true
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!is_menu_shown || !is_nuked){
+    alarm[2]=1
+    is_menu_shown=true
+    }
 </string>
           </argument>
         </arguments>

@@ -37,6 +37,9 @@ new_y=0
 
 target_x=instance_nearest(x,y,obj_EvacuationPoint).x
 target_y=instance_nearest(x,y,obj_EvacuationPoint).y
+
+current_speed=unit_speed
+
 move_towards_point(target_x,target_y,unit_speed)
 
 message="Cywile "
@@ -67,7 +70,13 @@ draw_flag=false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_exists(obj_Infantry))
+            <string>if(obj_Controller.time&lt;6)
+    current_speed=unit_speed/2
+else
+    current_speed=unit_speed 
+
+
+if(instance_exists(obj_Infantry))
     friendly_near=distance_to_object(instance_nearest(x,y,obj_Infantry))&lt;64
 else
     friendly_near=false
@@ -76,12 +85,14 @@ if(!friendly_near)
 {
     new_x=random(room_width)
     new_y=random(room_height)
-    move_towards_point(new_x,new_y,unit_speed)
+    move_towards_point(new_x,new_y,current_speed)
 }
 else
-    move_towards_point(target_x,target_y,unit_speed)
+    move_towards_point(target_x,target_y,current_speed)
     
+
     
+     
 
 alarm[0]=60
 </string>
