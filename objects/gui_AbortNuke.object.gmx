@@ -54,6 +54,13 @@
 
 target.is_menu_shown=false
 
+with(target.nukeB){
+    instance_destroy()
+}
+with(target.abortB){
+    instance_destroy()
+}
+/*****************************************
 if(instance_exists(gui_Nuke)){
     with(gui_Nuke){
         instance_destroy()
@@ -61,6 +68,8 @@ if(instance_exists(gui_Nuke)){
 }
 
 instance_destroy()
+
+*************************************/
 </string>
           </argument>
         </arguments>

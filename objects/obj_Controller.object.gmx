@@ -31,7 +31,10 @@ time=6
 draw_set_font(display_font)
 draw_set_colour(c_white)
 
-window_set_fullscreen(true)
+//window_set_fullscreen(true)
+
+
+
 //only for prototype
 /*
 welcome_message_one="Witaj! Aby ewakuowac miasto (pomaranczowe kwadraty) musisz umiescic w nim jednostke piechoty i czekac az populacja spadnie do zera"
@@ -93,7 +96,6 @@ current_weather=choose("SLONECZNA", "POCHMURNO", "DESZCZ", "MGLA", "BURZA")
 weather_duration=round(random(5))
 
 
-show_message(current_weather)
 </string>
           </argument>
         </arguments>
@@ -118,7 +120,6 @@ show_message(current_weather)
             <kind>1</kind>
             <string>//game over event
 
-//show_message("ZABICI: "+string(people_killed)+" OCALENI: "+string(people_saved))
 if(!obj_Controller.game_paused){
     obj_Controller.game_paused=true
     instance_deactivate_all( false )
@@ -128,7 +129,6 @@ gui_VictoryScreen.deaths=people_killed
 gui_VictoryScreen.savings=people_saved
 
 gui_VictoryScreen.alarm[0]=10
-    //show_message("zapauzowan")
 }
 
 </string>
@@ -225,9 +225,8 @@ if(panic_level&gt;90)
 if(weather_duration&gt;0) 
     weather_duration--;
     else     {
-    current_weather=choose("SLONECZNA", "POCHMURNO", "DESZCZ", "MGLA", "BURZA")
+    current_weather=choose("SLONCE", "CHMURY", "DESZCZ", "MGLA", "BURZA")
     weather_duration=round(random(5))
-    show_message(current_weather)
     }
 
 

@@ -65,6 +65,7 @@
       <sprite>sprites\spr_TempUnitSpawner</sprite>
       <sprite>sprites\tmp_SpecialForces</sprite>
       <sprite>sprites\spr_TempMissle</sprite>
+      <sprite>sprites\spr_TempRadioactiveCloud</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -91,6 +92,7 @@
       <object>objects\obj_SpecialForces</object>
       <object>objects\obj_Tanks</object>
       <object>objects\obj_Missle</object>
+      <object>objects\obj_RadioactiveCloud</object>
     </objects>
     <objects name="GUI">
       <objects name="BUTTONS">

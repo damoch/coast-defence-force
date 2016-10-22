@@ -350,7 +350,7 @@ if(status&lt;=0){
         firepower=15
     target.status-=firepower;
     reloading=true
-    alarm[1]=15
+    alarm[1]=30
     if(!panic_mode)alarm[2]=30
 }
 if(target==undefined){

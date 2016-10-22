@@ -291,7 +291,7 @@ speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(target_city==id)
+            <string>if(target_city==other.id)
         alarm[1]=1
 </string>
           </argument>
