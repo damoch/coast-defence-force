@@ -72,6 +72,7 @@
     <background>background\bck_Main</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\display_font</font>
   </fonts>
@@ -110,9 +111,11 @@
         <object>objects\obj_UnitSpawner</object>
         <object>objects\gui_AirStrikeMarker</object>
       </objects>
+      <objects name="PANELS">
+        <object>objects\gui_VictoryScreen</object>
+        <object>objects\gui_PauseMenu</object>
+      </objects>
       <object>objects\gui_GameLogoObj</object>
-      <object>objects\gui_PauseMenu</object>
-      <object>objects\gui_VictoryScreen</object>
     </objects>
     <objects name="MISC">
       <object>objects\eff_FadeToBlack</object>
@@ -129,8 +132,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\mission</room>
-    <room>rooms\menu</room>
     <room>rooms\rm_Temp</room>
+    <room>rooms\menu</room>
     <room>rooms\room3</room>
   </rooms>
   <help>
