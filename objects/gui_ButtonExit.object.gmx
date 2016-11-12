@@ -3,7 +3,7 @@
   <spriteName>gui_Button</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100</depth>
+  <depth>-1001</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>message="Tak"
+            <string>message="Yes"
 </string>
           </argument>
         </arguments>
@@ -48,7 +48,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(menu)
+            <string>audio_stop_all()
+var eff;
+
+eff = instance_create( 0, 0, eff_FadeToBlack );
+eff.newRoom = menu;
 </string>
           </argument>
         </arguments>

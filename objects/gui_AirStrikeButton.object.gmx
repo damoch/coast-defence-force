@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>strike_possible=true
 
-message="Atak lotniczy"
+message="Airstrike"
 
 msg_x=0
 msg_y=0

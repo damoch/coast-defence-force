@@ -37,9 +37,12 @@ new_y=0
 
 target_x=instance_nearest(x,y,obj_EvacuationPoint).x
 target_y=instance_nearest(x,y,obj_EvacuationPoint).y
+
+current_speed=unit_speed
+
 move_towards_point(target_x,target_y,unit_speed)
 
-message="Cywile "
+message="Civilians "
 
 msg_x=0
 msg_y=0
@@ -67,7 +70,13 @@ draw_flag=false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_exists(obj_Infantry))
+            <string>if(obj_Controller.time&lt;6)
+    current_speed=unit_speed/2
+else
+    current_speed=unit_speed 
+
+
+if(instance_exists(obj_Infantry))
     friendly_near=distance_to_object(instance_nearest(x,y,obj_Infantry))&lt;64
 else
     friendly_near=false
@@ -76,14 +85,64 @@ if(!friendly_near)
 {
     new_x=random(room_width)
     new_y=random(room_height)
-    move_towards_point(new_x,new_y,unit_speed)
+    move_towards_point(new_x,new_y,current_speed)
 }
 else
-    move_towards_point(target_x,target_y,unit_speed)
-    
+    move_towards_point(target_x,target_y,current_speed)
     
 
+    
+     
+
 alarm[0]=60
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_RadioactiveCloud">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>obj_Controller.people_killed+=100
+instance_destroy()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Monsters">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>obj_Controller.people_killed+=100
+instance_destroy()
 </string>
           </argument>
         </arguments>
@@ -110,30 +169,6 @@ alarm[0]=60
 instance_destroy()
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_Monsters">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>obj_Controller.people_killed+=100
-instance_destroy()
 </string>
           </argument>
         </arguments>
@@ -257,9 +292,9 @@ if(draw_flag){
     msg_x=mouse_x-32
     msg_y=mouse_y-15
     if(friendly_near)
-        draw_text(msg_x,msg_y,message+"(zmierza do punktu ewakuacji)")
+        draw_text(msg_x,msg_y,message+"(going to evacuation point)")
     else    
-        draw_text(msg_x,msg_y,message+"(spanikowany)")
+        draw_text(msg_x,msg_y,message+"(panicking)")
 }
 </string>
           </argument>

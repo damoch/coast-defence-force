@@ -31,7 +31,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Infantry">
+    <event eventtype="4" ename="obj_Tanks">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -58,7 +58,7 @@ if(other.status&lt;=30){
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Tanks">
+    <event eventtype="4" ename="obj_Infantry">
       <action>
         <libid>1</libid>
         <id>603</id>

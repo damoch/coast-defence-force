@@ -51,10 +51,12 @@ will_of_fight=100;
 recent_victory=false
 
 
-name="Sily specjalne"
+name="Special forces"
 name_drawn=""
 
+current_speed=unit_speed
 
+firepower=0
 </string>
           </argument>
         </arguments>
@@ -231,8 +233,12 @@ else{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-move_towards_point(targetX,targetY,unit_speed)
+            <string>if(obj_Controller.time&lt;6)
+    current_speed=unit_speed/2
+else
+    current_speed=unit_speed
+
+move_towards_point(targetX,targetY,current_speed)
 </string>
           </argument>
         </arguments>
@@ -275,7 +281,7 @@ else target=0;
 
 //displaying unit status
 if(distance_to_point(mouse_x,mouse_y)&lt;20||obj_Controller.current_unit==id){
-    status_text="Status jednostki: "+string(status)
+    status_text="Unit status: "+string(status)
     name_drawn=name
 }
 else{ 
@@ -340,7 +346,11 @@ if(status&lt;=0){
           <argument>
             <kind>1</kind>
             <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
-    target.status-=2;
+    if(obj_Controller.time&lt;6)
+        firepower=3
+    else
+        firepower=6
+    target.status-=firepower;
     reloading=true
     alarm[1]=15
     if(!panic_mode)alarm[2]=30
@@ -351,40 +361,6 @@ if(target==undefined){
     }
     
 
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_BigMonster">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
-    target.status-=15;
-    reloading=true
-    alarm[1]=15
-    if(!panic_mode)alarm[2]=30
-}
-if(target==undefined){
-    recent_victory=true;
-    alarm[4]=600;
-    }
-    
 
 </string>
           </argument>
@@ -417,6 +393,44 @@ if(target==undefined){
         }
     alarm[5]=30
 }*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_BigMonster">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
+    if(obj_Controller.time&lt;6)
+        firepower=3
+    else
+        firepower=1
+    target.status-=firepower;
+    reloading=true
+    alarm[1]=15
+    if(!panic_mode)alarm[2]=30
+}
+if(target==undefined){
+    recent_victory=true;
+    alarm[4]=600;
+    }
+    
+
 </string>
           </argument>
         </arguments>

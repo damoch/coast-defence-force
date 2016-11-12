@@ -35,8 +35,8 @@ evacuation=false
 
 population=100
 
-population_text="Populacja: "+string(population)+"%"
-status_text="Status obrony: "+string(status)+"%"
+population_text="Population: "+string(population)+"%"
+status_text="Defenses status: "+string(status)+"%"
 
 airstrike=false
 
@@ -66,6 +66,35 @@ show_status=false
           <argument>
             <kind>1</kind>
             <string>instance_create(x,y,obj_AbandonedCity);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>population-=random(2)
+
+if(place_meeting(x,y,obj_RadioactiveCloud)){
+    alarm[3]=15;
+}
+
+
 </string>
           </argument>
         </arguments>
@@ -112,7 +141,8 @@ if(evacuater==0){
 
 if(population&lt;=0)
         instance_change(obj_AbandonedCity,true)
-//show_message(string(cv.id))
+else if(status&lt;=0 &amp;&amp; population&gt;=0)
+        instance_change(obj_Colony,true)
 
 
 
@@ -139,7 +169,7 @@ if(population&lt;=0)
           <argument>
             <kind>1</kind>
             <string>evacuation=false
-population_text="Populacja: "+string(population)+"%"
+population_text="Population: "+string(population)+"%"
 
 
 population-=random(2)
@@ -173,7 +203,7 @@ if(population&lt;=0)
     population-=random(10)
     //evacuation=false
     show_message("dsads")
-    population_text="Populacja: "+string(population)+"%"
+    population_text="Population: "+string(population)+"%"
 
 </string>
           </argument>
@@ -209,7 +239,6 @@ if(evacuater!=0){
     if(!evacuation){
         evacuation=true
         alarm[1]=150
-        //show_message("Like im aooutta here lol and may saviorrer iz "+string(evacuater))
 }
 }
 if(place_meeting(x,y,obj_Infantry)==true){
@@ -219,7 +248,6 @@ if(place_meeting(x,y,obj_Infantry)==true){
 else{
     
     evacuater=0
-    //show_message("Lol, u lewing me? ;( "+string(evacuater))
 }
 if(((place_meeting(x,y,obj_BigMonster))||(place_meeting(x,y,obj_Monsters)))&amp;&amp;evacuater==0&amp;&amp;under_attack==false)
 {
@@ -228,35 +256,13 @@ if(((place_meeting(x,y,obj_BigMonster))||(place_meeting(x,y,obj_Monsters)))&amp;
     under_attack=true
 }
 
-
-    status_text="Status obrony: "+string(status)+"%"
-//bullshit that is not working
-
-/*    
-if(place_meeting(x,y,obj_Infantry)&amp;&amp;!evacuation){
-//show_message("trololo")
-    evacuation=true
-    alarm[0]=30
-}else
-{
-    evacuation=false
+if(place_meeting(x,y,obj_RadioactiveCloud)){
+    alarm[3]=15;
 }
-*/
 
-//bullshit that may actually work
 
-//nope
-/*
-if((place_meeting(x,y,obj_Infantry)&amp;&amp;!evacuation))evacuation=true
-else evacuation=false
-*/
+status_text="Defenses status: "+string(status)+"%"
 
-//maybe this time?
-//no no nonnonnonononnonnno
-/*
-if((place_meeting(x,y,obj_Infantry)&amp;&amp;evacuater==0)){evacuater=instance_nearest(x,y,obj_Infantry).id;}
-else evacuater=0
-*/
 </string>
           </argument>
         </arguments>

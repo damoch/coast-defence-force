@@ -29,7 +29,7 @@
 instance_create(x-96,y+64,gui_CancelButton)
 instance_create(x+128,y+64,gui_ButtonExit)
 
-message="Czy chcesz wyjsc z gry?"
+message="Exit to menu?"
 </string>
           </argument>
         </arguments>

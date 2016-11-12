@@ -47,12 +47,13 @@ status_text=""
 //debug
 colliders=0;
 
-message="Duzy potwor"
+message="Big monster"
 
 msg_x=0
 msg_y=0
 
 draw_flag=false
+search_flag=false
 </string>
           </argument>
         </arguments>
@@ -100,49 +101,31 @@ if(obj_Controller.panic_level&gt;0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*speed=unit_speed;
-//search for new target every 1.5h (450 frames) of in game time
-if(!(distance_to_object(instance_nearest(x,y,obj_City))&lt;150)){
-    if(instance_exists(obj_City)){target_city=obj_Controller.cities[random(instance_number(obj_City))] }
-    else target_city=0;
-    if(instance_exists(obj_Infantry)){target_unit=instance_nearest(x,y,obj_Infantry) }
-    else target_unit=0;
-}
-else
-{
-    target_city=instance_nearest(x,y,obj_City)
-    targetX=target_city.x
-    targetY=target_city.y
-}
-
-
-
-//show_message(string(target_city))
-if(target_city!=0){
-if(distance_to_object(target_city)&gt;distance_to_object(target_unit))
-    move_towards_point(targetX,targetY,unit_speed)
-}
-else
-    if(target_unit!=0)move_towards_point(target_unit.x,target_unit.y,unit_speed)
-//alarm[1]=150
-*/
-
-
-if(!instance_exists(obj_SpecialForces)){
-target_city=obj_Controller.cities[random(instance_number(obj_City))] 
-//if(instance_exists(
-targetX=target_city.x
-targetY=target_city.y
-move_towards_point(targetX,targetY,unit_speed)
-}
-else
-{
-    target_city=instance_nearest(x,y,obj_SpecialForces)
-    targetX=target_city.x
-    targetY=target_city.y
-    move_towards_point(targetX,targetY,unit_speed)
+            <string>
+if(obj_Controller.time&lt;6)
+    speed=0
+else{
+    speed=unit_speed
+    if(!instance_exists(obj_SpecialForces)){
+        target_city=obj_Controller.cities[random(instance_number(obj_City))] 
+        if(instance_exists(target_city)){
+            targetX=target_city.x      
+            targetY=target_city.y
+            move_towards_point(targetX,targetY,unit_speed)
+        }
+            else
+                alarm[1]=450
+    }
+    else
+    {
+        target_city=instance_nearest(x,y,obj_SpecialForces)
+        targetX=target_city.x
+        targetY=target_city.y
+        move_towards_point(targetX,targetY,unit_speed)
+    }
 }
 alarm[1]=450
+
 </string>
           </argument>
         </arguments>
@@ -206,35 +189,6 @@ if(colliders==2)instance_destroy();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Infantry">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//colliders++;
-if(!reloading){
-reloading=true
-other.status-=75;
-alarm[0]=60
-alarm[1]=60}
-speed=0
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_Tanks">
       <action>
         <libid>1</libid>
@@ -257,30 +211,6 @@ reloading=true
 other.status-=45;
 alarm[0]=60}
 speed=0
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_Colony">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>alarm[1]=1
-status=100
 </string>
           </argument>
         </arguments>
@@ -310,6 +240,59 @@ other.status-=15;
 alarm[0]=60
 alarm[1]=60}
 speed=0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Infantry">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//colliders++;
+if(!reloading){
+reloading=true
+other.status-=75;
+alarm[0]=60
+alarm[1]=60}
+speed=0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Colony">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(target_city==other.id)
+        alarm[1]=1
 </string>
           </argument>
         </arguments>

@@ -25,13 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>time=6
-day=1
+            <string>day=0
+time=6
 
 draw_set_font(display_font)
 draw_set_colour(c_white)
 
-window_set_fullscreen(true)
+//window_set_fullscreen(true)
+
+
+
 //only for prototype
 /*
 welcome_message_one="Witaj! Aby ewakuowac miasto (pomaranczowe kwadraty) musisz umiescic w nim jednostke piechoty i czekac az populacja spadnie do zera"
@@ -65,7 +68,7 @@ credits=500;
 people_killed=0
 people_saved=0
 
-time_text="CZAS: "+string(time)+":00 DZIEN: "+string(day)
+time_text="time: "+string(time)+":00 day: "+string(day)
 
 alarm[0]=300 //300frames = 1hour
 
@@ -77,14 +80,21 @@ alarm[0]=300 //300frames = 1hour
 
 panic_level=random(11);
 
-panic_string="POZIOM PANIKI: "+string(panic_level)
+panic_string="PANIC LEVEL: "+string(panic_level)
 
 monsters_killed=0
 units_killed=0
 
 game_paused=false
 
-window_set_cursor(spr_Infantry)
+cursor_sprite=cur_Cursor
+
+draw_offset=sprite_get_width(gui_Button)+10
+
+//weather
+current_weather=choose("SLONECZNA", "POCHMURNO", "DESZCZ", "MGLA", "BURZA")
+weather_duration=round(random(5))
+
 
 </string>
           </argument>
@@ -110,7 +120,17 @@ window_set_cursor(spr_Infantry)
             <kind>1</kind>
             <string>//game over event
 
-show_message("ZABICI: "+string(people_killed)+" OCALENI: "+string(people_saved))
+if(!obj_Controller.game_paused){
+    obj_Controller.game_paused=true
+    instance_deactivate_all( false )
+    
+instance_create(room_width/2,room_height/2,gui_VictoryScreen)
+gui_VictoryScreen.deaths=people_killed
+gui_VictoryScreen.savings=people_saved
+
+gui_VictoryScreen.alarm[0]=10
+}
+
 </string>
           </argument>
         </arguments>
@@ -161,6 +181,8 @@ for(i=0;i&lt;instance_number(obj_City);i++){
             <kind>1</kind>
             <string>//hour event
 
+
+
 if(time==23){
     time=0;
     day++
@@ -188,14 +210,26 @@ if(time==6){credits+=instance_number(obj_City)*100;}
 if(time%6 == 0){
     if(monsters_killed&gt;units_killed)monsters_multiplier++
 }
-time_text="CZAS: "+string(time)+":00 DZIEN: "+string(day)
-panic_string="POZIOM PANIKI: "+string(panic_level)
+time_text="TIME: "+string(time)+":00 DAY: "+string(day)
+panic_string="panic level: "+string(panic_level)
 //show_message(string(room_speed))
 credits+=instance_number(obj_City)*10
 alarm[0]=300
 
 if(!instance_exists(obj_City)&amp;&amp;!instance_exists(obj_Civilian))
     alarm[2]=1
+    
+if(panic_level&gt;90)
+    panic_level=90
+
+if(weather_duration&gt;0) 
+    weather_duration--;
+    else     {
+    current_weather=choose("SLONCE", "CHMURY", "DESZCZ", "MGLA", "BURZA")
+    weather_duration=round(random(5))
+    }
+
+
 </string>
           </argument>
         </arguments>
@@ -246,9 +280,10 @@ if(mouse_check_button_pressed(mb_right)&amp;&amp;current_unit!=undefined){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(x,y,time_text)
-draw_text(x+256,y,panic_string)
-draw_text(x+512,y,"Kredyty: "+string(credits))
+            <string>
+draw_text(x+draw_offset,y,time_text)
+draw_text(x+draw_offset+256,y,panic_string)
+draw_text(x+draw_offset+512,y,"Credits: "+string(credits))
 
 if(credits&gt;1000)
     credits=1000
@@ -279,6 +314,29 @@ if(panic_level&lt;0)
           <argument>
             <kind>1</kind>
             <string>time=4
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>time=2
 </string>
           </argument>
         </arguments>
