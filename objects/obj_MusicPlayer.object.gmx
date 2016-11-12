@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>playlist[0] = thisiswhereitbegins
-playlist[1] = waiting
-playlist[2] = lightDubstep
-playlist[3] = boom
+            <string>playlist[0] = mu_threat
+playlist[1] = mu_atposition
+playlist[2] = mu_alertred
+playlist[3] = mu_airstrike
+playlist[4] = mu_smashed
 
-PLAYLIST_LENGTH=4
+PLAYLIST_LENGTH=5
 
 song_index=-1
 

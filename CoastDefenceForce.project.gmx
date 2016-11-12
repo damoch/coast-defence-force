@@ -8,10 +8,11 @@
     <sounds name="music">
       <sound>sound\mu_mainMenu</sound>
       <sounds name="scores">
-        <sound>sound\boom</sound>
-        <sound>sound\lightDubstep</sound>
-        <sound>sound\thisiswhereitbegins</sound>
-        <sound>sound\waiting</sound>
+        <sound>sound\mu_threat</sound>
+        <sound>sound\mu_atposition</sound>
+        <sound>sound\mu_alertred</sound>
+        <sound>sound\mu_airstrike</sound>
+        <sound>sound\mu_smashed</sound>
       </sounds>
     </sounds>
   </sounds>
@@ -72,7 +73,6 @@
     <background>background\bck_Main</background>
   </backgrounds>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\display_font</font>
   </fonts>
