@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>strike_placed=false
 
-status_text=""
+status_text="Press RMB to start attack"
 </string>
           </argument>
         </arguments>

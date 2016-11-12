@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>message="Zamknij"
+            <string>message="Exit"
 </string>
           </argument>
         </arguments>
@@ -52,7 +52,7 @@
 var eff;
 
 eff = instance_create( 0, 0, eff_FadeToBlack );
-eff.newRoom = room3;
+eff.newRoom = -1;
 </string>
           </argument>
         </arguments>

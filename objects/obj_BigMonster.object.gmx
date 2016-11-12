@@ -47,7 +47,7 @@ status_text=""
 //debug
 colliders=0;
 
-message="Duzy potwor"
+message="Big monster"
 
 msg_x=0
 msg_y=0

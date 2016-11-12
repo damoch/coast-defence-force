@@ -31,7 +31,7 @@ start_x=obj_EvacuationPoint.x
 start_y=obj_EvacuationPoint.y
 
 
-message="Piechota (koszt: 100)"
+message="Infantry (cost: 100)"
 
 msg_x=0
 msg_y=0

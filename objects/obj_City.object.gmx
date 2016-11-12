@@ -35,8 +35,8 @@ evacuation=false
 
 population=100
 
-population_text="Populacja: "+string(population)+"%"
-status_text="Status obrony: "+string(status)+"%"
+population_text="Population: "+string(population)+"%"
+status_text="Defenses status: "+string(status)+"%"
 
 airstrike=false
 

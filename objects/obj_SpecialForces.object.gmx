@@ -51,7 +51,7 @@ will_of_fight=100;
 recent_victory=false
 
 
-name="Sily specjalne"
+name="Special forces"
 name_drawn=""
 
 current_speed=unit_speed
@@ -281,7 +281,7 @@ else target=0;
 
 //displaying unit status
 if(distance_to_point(mouse_x,mouse_y)&lt;20||obj_Controller.current_unit==id){
-    status_text="Status jednostki: "+string(status)
+    status_text="Unit status: "+string(status)
     name_drawn=name
 }
 else{ 

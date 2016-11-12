@@ -47,7 +47,7 @@ status_text=""
 //debug
 colliders=0;
 
-message="Potwory"
+message="Monsters"
 
 msg_x=0
 msg_y=0

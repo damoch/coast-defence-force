@@ -37,7 +37,7 @@ new_y=0
 spawning_rate=0
 
 
-message="Kolonia potworow"
+message="Monsters lair (press LMB for nuclear attack)"
 
 draw_flag=false
 

@@ -99,7 +99,7 @@ targetY=obj_EvacuationPoint.y-100
 move_towards_point(targetX,targetY,unit_speed)
 alarm[1]=3*300
 
-status_text="Operuje do: "+string(obj_Controller.time+3)+":00"
+status_text="In zone until: "+string(obj_Controller.time+3)+":00"
 
 active=true
 </string>
@@ -126,7 +126,7 @@ active=true
             <kind>1</kind>
             <string>//return to base
 
-status_text="Operacja zakonczona"
+status_text="Returning to base"
 
 targetX=start_x
 targetY=start_y

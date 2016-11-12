@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>title_text="Coast Defence Force"
-version="VER: 0.0.1 BETA"
+version="VER: 0.1.0 BETA"
 
 cursor_sprite=cur_Cursor
 
@@ -58,7 +58,7 @@ message=""
           <argument>
             <kind>1</kind>
             <string>if(draw_flag){
-    message="Nacisnij teraz shift"
+    message="Press shift"
 }
 else
 {
@@ -199,7 +199,7 @@ if(draw_flag){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>message="kliknij lewy przycisk myszki aby zagrac w niegotowym trybie losowym"
+            <string>message="Press LMB to play in unfinished randomized mode"
 
 easter_egg=true
 </string>

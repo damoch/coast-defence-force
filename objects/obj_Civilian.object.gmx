@@ -42,7 +42,7 @@ current_speed=unit_speed
 
 move_towards_point(target_x,target_y,unit_speed)
 
-message="Cywile "
+message="Civilians "
 
 msg_x=0
 msg_y=0
@@ -292,9 +292,9 @@ if(draw_flag){
     msg_x=mouse_x-32
     msg_y=mouse_y-15
     if(friendly_near)
-        draw_text(msg_x,msg_y,message+"(zmierza do punktu ewakuacji)")
+        draw_text(msg_x,msg_y,message+"(going to evacuation point)")
     else    
-        draw_text(msg_x,msg_y,message+"(spanikowany)")
+        draw_text(msg_x,msg_y,message+"(panicking)")
 }
 </string>
           </argument>

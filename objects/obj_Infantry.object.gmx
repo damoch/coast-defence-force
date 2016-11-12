@@ -43,7 +43,7 @@ attack_range=64
 
 status=100;
 status_text=""
-name="Piechota"
+name="Infantry"
 name_drawn=""
 
 reloading=false;
@@ -279,7 +279,7 @@ else target=0;
 
 //displaying unit status
 if(distance_to_point(mouse_x,mouse_y)&lt;20||obj_Controller.current_unit==id){
-    status_text="Status jednostki: "+string(status)
+    status_text="Unit status: "+string(status)
     name_drawn=name
 }
 else{ 
