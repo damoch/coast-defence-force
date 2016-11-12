@@ -169,7 +169,7 @@ else if(status&lt;=0 &amp;&amp; population&gt;=0)
           <argument>
             <kind>1</kind>
             <string>evacuation=false
-population_text="Populacja: "+string(population)+"%"
+population_text="Population: "+string(population)+"%"
 
 
 population-=random(2)
@@ -203,7 +203,7 @@ if(population&lt;=0)
     population-=random(10)
     //evacuation=false
     show_message("dsads")
-    population_text="Populacja: "+string(population)+"%"
+    population_text="Population: "+string(population)+"%"
 
 </string>
           </argument>
@@ -261,7 +261,7 @@ if(place_meeting(x,y,obj_RadioactiveCloud)){
 }
 
 
-status_text="Status obrony: "+string(status)+"%"
+status_text="Defenses status: "+string(status)+"%"
 
 </string>
           </argument>

@@ -30,7 +30,7 @@
 start_x=obj_EvacuationPoint.x
 start_y=obj_EvacuationPoint.y
 
-message="Armour unit (cost: 200)"
+message="Armored unit (cost: 200)"
 
 msg_x=0
 msg_y=0

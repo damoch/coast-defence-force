@@ -132,9 +132,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\menu</room>
     <room>rooms\mission</room>
     <room>rooms\rm_Temp</room>
-    <room>rooms\menu</room>
     <room>rooms\room3</room>
   </rooms>
   <help>
