@@ -110,6 +110,7 @@ else{
             targetX=target_city.x      
             targetY=target_city.y
             move_towards_point(targetX,targetY,unit_speed)
+            show_message(string(targetX) + " " + string(targetY))
         }
             else
                 alarm[1]=450

@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_flag=false
-message="Abandoned city"
+            <string>draw_flag=false;
+message="Abandoned city";
 </string>
           </argument>
         </arguments>
@@ -65,7 +65,7 @@ message="Abandoned city"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_flag=false
+            <string>draw_flag=false;
 </string>
           </argument>
         </arguments>
@@ -88,7 +88,7 @@ message="Abandoned city"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_flag=true
+            <string>draw_flag=true;
 </string>
           </argument>
         </arguments>
@@ -111,12 +111,12 @@ message="Abandoned city"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self()
+            <string>draw_self();
 
 if(draw_flag){
-    msg_x=mouse_x-32
-    msg_y=mouse_y-15
-    draw_text(msg_x,msg_y,message)
+    msg_x=mouse_x-32;
+    msg_y=mouse_y-15;
+    draw_text(msg_x,msg_y,message);
 }
 </string>
           </argument>
