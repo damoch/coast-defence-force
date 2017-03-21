@@ -30,7 +30,7 @@ start_y=y
 
 
 strike_done=false
-aircraft_speed=6
+aircraft_speed=60/obj_Controller.seconds_to_hour;
 </string>
           </argument>
         </arguments>

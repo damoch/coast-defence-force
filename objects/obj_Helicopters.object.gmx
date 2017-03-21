@@ -31,8 +31,8 @@ start_y=y
 targetX=0
 targetY=0
 
-unit_speed=3
-
+speed_per_hour=30
+unit_speed=speed_per_hour/obj_Controller.seconds_to_hour;
 target_id=0
 
 target_big_id=0

@@ -31,8 +31,9 @@ targetY=0
 
 evacuating=false
 
-unit_speed=1.28;
+speed_per_hour=12.8;
 
+unit_speed=speed_per_hour/obj_Controller.seconds_to_hour;
 panic_mode=false;
 
 target=0;

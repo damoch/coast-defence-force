@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>target=0;
 alarm[1]=room_speed;
-
+speed_per_hour = 6.4;
 //attack_range=16;
 
 status=round(random(100));
@@ -38,7 +38,7 @@ target_city=0;
 targetX=0
 targetY=0
 
-unit_speed=0.64;
+unit_speed=speed_per_hour/obj_Controller.seconds_to_hour;
 
 reloading=false;
 
@@ -122,7 +122,7 @@ else{
         move_towards_point(targetX,targetY,unit_speed)
     }
 }
-alarm[1]=450
+alarm[1]=1.5 * obj_Controller.update_time_value
 
 </string>
           </argument>

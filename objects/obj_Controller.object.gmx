@@ -32,8 +32,8 @@ draw_set_font(display_font)
 draw_set_colour(c_white)
 
 //window_set_fullscreen(true)
-
-
+seconds_to_hour = 600;
+update_time_value = seconds_to_hour * room_speed;//room speed = frames processed in one second
 
 //only for prototype
 /*
@@ -70,7 +70,7 @@ people_saved=0
 
 time_text="time: "+string(time)+":00 day: "+string(day)
 
-alarm[0]=300 //300frames = 1hour
+alarm[0]=update_time_value //300frames = 1hour
 
 /*VERY IMPORTANT!
  *Panic level declaration
@@ -214,7 +214,7 @@ time_text="TIME: "+string(time)+":00 DAY: "+string(day)
 panic_string="panic level: "+string(panic_level)
 //show_message(string(room_speed))
 credits+=instance_number(obj_City)*10
-alarm[0]=300
+alarm[0]=update_time_value
 
 if(!instance_exists(obj_City)&amp;&amp;!instance_exists(obj_Civilian))
     alarm[2]=1

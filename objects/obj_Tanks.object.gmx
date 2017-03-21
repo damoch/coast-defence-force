@@ -29,8 +29,9 @@
 targetX=0
 targetY=0
 recent_victory=false
-unit_speed=2;
+speed_per_hour=20;
 
+unit_speed=speed_per_hour/obj_Controller.seconds_to_hour;
 panic_mode=false;
 
 target=0;

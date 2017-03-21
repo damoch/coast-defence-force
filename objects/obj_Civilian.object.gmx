@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>unit_speed=0.64
-
+            <string>speed_per_hour=6.4
+unit_speed=speed_per_hour/obj_Controller.seconds_to_hour;
 friendly_near=false
 monster_near=false
 //checking if friendly unit is near

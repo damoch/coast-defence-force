@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>target=obj_EvacuationPoint.target_city
 
-missle_speed=7.5
+missle_speed=75/obj_Controller.seconds_to_hour;
 
 move_towards_point(target.x,target.y,missle_speed)
 </string>
