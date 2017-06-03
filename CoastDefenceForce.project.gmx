@@ -117,6 +117,9 @@
         <object>objects\gui_PauseMenu</object>
       </objects>
       <object>objects\gui_GameLogoObj</object>
+      <objects name="INPUT">
+        <object>objects\gui_TextBox</object>
+      </objects>
     </objects>
     <objects name="MISC">
       <object>objects\eff_FadeToBlack</object>
@@ -132,8 +135,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\mission</room>
     <room>rooms\menu</room>
+    <room>rooms\mission</room>
     <room>rooms\rm_Temp</room>
     <room>rooms\room3</room>
   </rooms>
