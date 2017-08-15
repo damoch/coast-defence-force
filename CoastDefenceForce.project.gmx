@@ -74,6 +74,9 @@
     <background>background\bck_Main</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\Chance.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\display_font</font>
   </fonts>
@@ -95,6 +98,7 @@
       <object>objects\obj_Tanks</object>
       <object>objects\obj_Missle</object>
       <object>objects\obj_RadioactiveCloud</object>
+      <object>objects\obj_WeatherField</object>
     </objects>
     <objects name="GUI">
       <objects name="BUTTONS">
@@ -135,8 +139,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\menu</room>
     <room>rooms\mission</room>
+    <room>rooms\menu</room>
     <room>rooms\rm_Temp</room>
     <room>rooms\room3</room>
   </rooms>

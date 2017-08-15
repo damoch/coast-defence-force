@@ -34,9 +34,10 @@ under_attack=false
 evacuation=false
 
 population=100
-
+weather = "sunny";
 population_text="Population: "+string(population)+"%"
 status_text="Defenses status: "+string(status)+"%"
+weather_text="Weather: ";
 
 airstrike=false
 
@@ -383,8 +384,9 @@ status_text="Defenses status: "+string(status)+"%"
             <kind>1</kind>
             <string>draw_self()
 if(show_status){
-    draw_text(x-96,y-48,population_text)
-    draw_text(x-96,y-66,status_text)
+    draw_text(x-96,y-48,population_text);
+    draw_text(x-96,y-66,status_text);
+    draw_text(x-96, y-80, weather_text + weather);
 }
 </string>
           </argument>

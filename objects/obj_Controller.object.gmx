@@ -32,7 +32,7 @@ draw_set_font(display_font)
 draw_set_colour(c_white)
 
 //window_set_fullscreen(true)
-seconds_to_hour = 3600;
+seconds_to_hour = 10;
 update_time_value = seconds_to_hour * room_speed;//room speed = frames processed in one second
 
 //only for prototype
@@ -91,9 +91,7 @@ cursor_sprite=cur_Cursor
 
 draw_offset=sprite_get_width(gui_Button)+10
 
-//weather
-current_weather=choose("SLONECZNA", "POCHMURNO", "DESZCZ", "MGLA", "BURZA")
-weather_duration=round(random(5))
+
 
 
 </string>
@@ -222,12 +220,9 @@ if(!instance_exists(obj_City)&amp;&amp;!instance_exists(obj_Civilian))
 if(panic_level&gt;90)
     panic_level=90
 
-if(weather_duration&gt;0) 
-    weather_duration--;
-    else     {
-    current_weather=choose("SLONCE", "CHMURY", "DESZCZ", "MGLA", "BURZA")
-    weather_duration=round(random(5))
-    }
+if(Chance(0.6)){
+    instance_create(random(room_width), y, obj_WeatherField);
+}
 
 
 </string>
