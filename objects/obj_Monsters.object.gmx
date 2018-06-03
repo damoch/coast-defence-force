@@ -206,7 +206,7 @@ if(colliders==2)instance_destroy();
             <kind>1</kind>
             <string>if(!reloading){
 reloading=true
-other.status-=45;
+other.status-=obj_Controller.difficulty_level.S_MONSTER_ATTACK_VALUE_TANKS;
 alarm[0]=60}
 speed=0
 </string>
@@ -234,7 +234,7 @@ speed=0
             <string>//colliders++;
 if(!reloading){
 reloading=true
-other.status-=75;
+other.status-=obj_Controller.difficulty_level.S_MONSTER_ATTACK_VALUE_SF;
 alarm[0]=60
 alarm[1]=60}
 speed=0
@@ -263,7 +263,7 @@ speed=0
             <string>//colliders++;
 if(!reloading){
 reloading=true
-other.status-=25;
+other.status-=obj_Controller.difficulty_level.S_MONSTER_ATTACK_VALUE_INF;
 alarm[0]=30
 alarm[1]=30}
 speed=0
@@ -316,12 +316,12 @@ speed=0
             <string>if(!reloading){
     if(!other.evacuation){
         reloading=true
-        other.status-=10;
+        other.status-=obj_Controller.difficulty_level.S_MONSTER_ATTACK_VALUE_CITY;
         alarm[0]=60
     }
     else{
         reloading=true
-        other.status-=2;
+        other.status-=obj_Controller.difficulty_level.S_MONSTER_ATTACK_VALUE_CITY_DEFENDED;
         status-=23
         alarm[0]=60
     }

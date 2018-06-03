@@ -82,23 +82,35 @@
   </fonts>
   <objects name="objects">
     <objects name="GAME">
-      <object>objects\obj_AbandonedCity</object>
-      <object>objects\obj_AirStrikeField</object>
-      <object>objects\obj_AirStrikeHugeField</object>
-      <object>objects\obj_BigMonster</object>
-      <object>objects\obj_City</object>
-      <object>objects\obj_Civilian</object>
-      <object>objects\obj_Colony</object>
-      <object>objects\obj_EvacuationPoint</object>
-      <object>objects\obj_Helicopters</object>
-      <object>objects\obj_Infantry</object>
-      <object>objects\obj_Monsters</object>
-      <object>objects\obj_Plane</object>
-      <object>objects\obj_SpecialForces</object>
-      <object>objects\obj_Tanks</object>
-      <object>objects\obj_Missle</object>
-      <object>objects\obj_RadioactiveCloud</object>
-      <object>objects\obj_WeatherField</object>
+      <objects name="STRUCTURES">
+        <object>objects\obj_AbandonedCity</object>
+        <object>objects\obj_City</object>
+        <object>objects\obj_EvacuationPoint</object>
+      </objects>
+      <objects name="UNITS">
+        <object>objects\obj_Civilian</object>
+        <object>objects\obj_Plane</object>
+        <object>objects\obj_Tanks</object>
+        <object>objects\obj_SpecialForces</object>
+        <object>objects\obj_Infantry</object>
+        <object>objects\obj_Helicopters</object>
+      </objects>
+      <objects name="HITZONES">
+        <object>objects\obj_AirStrikeHugeField</object>
+        <object>objects\obj_AirStrikeField</object>
+      </objects>
+      <objects name="EFFECTS">
+        <object>objects\obj_RadioactiveCloud</object>
+        <object>objects\obj_WeatherField</object>
+      </objects>
+      <objects name="MONSTERS">
+        <object>objects\obj_Monsters</object>
+        <object>objects\obj_Colony</object>
+        <object>objects\obj_BigMonster</object>
+      </objects>
+      <objects name="PROJECTILES">
+        <object>objects\obj_Missle</object>
+      </objects>
     </objects>
     <objects name="GUI">
       <objects name="BUTTONS">
@@ -131,6 +143,9 @@
       <object>objects\obj_Debug</object>
       <object>objects\obj_MusicPlayer</object>
       <object>objects\obj_credits</object>
+      <objects name="MODIFIERS">
+        <object>objects\obj_DifficultyNORMAL</object>
+      </objects>
     </objects>
     <objects name="UNUSED">
       <object>objects\obj_Armour</object>

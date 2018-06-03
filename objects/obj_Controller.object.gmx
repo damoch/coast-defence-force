@@ -91,7 +91,7 @@ cursor_sprite=cur_Cursor
 
 draw_offset=sprite_get_width(gui_Button)+10
 
-
+difficulty_level = instance_create(0,0,obj_DifficultyNORMAL);
 
 
 </string>
