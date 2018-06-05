@@ -187,7 +187,7 @@ if(colliders==2)instance_destroy();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Tanks">
+    <event eventtype="4" ename="obj_Infantry">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -204,10 +204,12 @@ if(colliders==2)instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!reloading){
+            <string>//colliders++;
+if(!reloading){
 reloading=true
-other.status-=obj_Controller.difficulty_level.S_MONSTER_ATTACK_VALUE_TANKS;
-alarm[0]=60}
+other.status-=obj_Controller.difficulty_level.S_MONSTER_ATTACK_VALUE_INF;
+alarm[0]=30
+alarm[1]=30}
 speed=0
 </string>
           </argument>
@@ -243,7 +245,7 @@ speed=0
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Infantry">
+    <event eventtype="4" ename="obj_Tanks">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -260,12 +262,10 @@ speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//colliders++;
-if(!reloading){
+            <string>if(!reloading){
 reloading=true
-other.status-=obj_Controller.difficulty_level.S_MONSTER_ATTACK_VALUE_INF;
-alarm[0]=30
-alarm[1]=30}
+other.status-=obj_Controller.difficulty_level.S_MONSTER_ATTACK_VALUE_TANKS;
+alarm[0]=60}
 speed=0
 </string>
           </argument>
@@ -313,7 +313,9 @@ speed=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!reloading){
+            <string>
+if(!reloading){
+    PlayVoice(city_under_attack, false);
     if(!other.evacuation){
         reloading=true
         other.status-=obj_Controller.difficulty_level.S_MONSTER_ATTACK_VALUE_CITY;

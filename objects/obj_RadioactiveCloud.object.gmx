@@ -33,7 +33,7 @@ move_towards_point(random(room_width),random(room_height),cloud_speed)
 alarm[0]=random_range(100,300)
 alarm[1]=random_range(48,72)*300
 
-message="Radioactive cloud"
+message="Fallout"
 
 msg_x=0
 msg_y=0
@@ -135,6 +135,7 @@ alarm[0]=random_range(100,300);
             <kind>1</kind>
             <string>//colliders++;
 if(!reloading){
+    PlayVoice(inf_fallout, false);
     reloading=true;
     other.status-=1;
     alarm[2]=15;

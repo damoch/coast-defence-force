@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>start_x=x
+            <string>moving_sound = tnks_moving;
+start_x=x
 start_y=y
 
 targetX=0

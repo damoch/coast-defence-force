@@ -15,6 +15,33 @@
         <sound>sound\mu_smashed</sound>
       </sounds>
     </sounds>
+    <sounds name="voices">
+      <sounds name="inf">
+        <sound>sound\inf_fallout</sound>
+        <sound>sound\inf_small_monsterd</sound>
+        <sound>sound\inf_moving</sound>
+        <sound>sound\inf_retreat</sound>
+        <sound>sound\inf_dying</sound>
+        <sound>sound\inf_big_monster</sound>
+        <sound>sound\inf_selected</sound>
+      </sounds>
+      <sounds name="city">
+        <sound>sound\city_fallout</sound>
+        <sound>sound\city_evacuation_end</sound>
+        <sound>sound\city_evacuation_paused</sound>
+        <sound>sound\city_evacuation</sound>
+        <sound>sound\city_under_attack</sound>
+      </sounds>
+      <sounds name="tnks">
+        <sound>sound\tnks_dying</sound>
+        <sound>sound\tnks_selected</sound>
+        <sound>sound\tnks_fallout</sound>
+        <sound>sound\tnks_moving</sound>
+        <sound>sound\tnks_small_monsters</sound>
+        <sound>sound\tnks_big_monsters</sound>
+        <sound>sound\tnks_retreat</sound>
+      </sounds>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="GUI">
@@ -76,6 +103,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\Chance.gml</script>
+    <script>scripts\PlayVoice.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\display_font</font>
@@ -86,6 +114,7 @@
         <object>objects\obj_AbandonedCity</object>
         <object>objects\obj_City</object>
         <object>objects\obj_EvacuationPoint</object>
+        <object>objects\obj_Colony</object>
       </objects>
       <objects name="UNITS">
         <object>objects\obj_Civilian</object>
@@ -105,7 +134,6 @@
       </objects>
       <objects name="MONSTERS">
         <object>objects\obj_Monsters</object>
-        <object>objects\obj_Colony</object>
         <object>objects\obj_BigMonster</object>
       </objects>
       <objects name="PROJECTILES">

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>friendly_near=false;
+            <string>moving_sound = inf_moving;
+friendly_near=false;
 targetX=0
 targetY=0
 
@@ -179,6 +180,7 @@ if(status&lt;30)will_of_fight-=15
 else will_of_fight+=25
 if(recent_victory)will_of_fight+=10
 if(obj_Controller.panic_level&gt;will_of_fight){
+        PlayVoice(inf_retreat, true);
         targetX=obj_EvacuationPoint.x;
         targetY=obj_EvacuationPoint.y
         move_towards_point(targetX,targetY,unit_speed);
@@ -290,6 +292,7 @@ else{
 
 //death
 if(status&lt;=0){
+    PlayVoice(inf_dying, true);
     obj_Controller.units_killed++;
     obj_Controller.people_killed+=500
     instance_destroy()
@@ -299,7 +302,7 @@ if(status&lt;=0){
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_UnitSpawner">
+    <event eventtype="4" ename="obj_BigMonster">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -316,12 +319,23 @@ if(status&lt;=0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(status&lt;30){
-    restore=random(69)
-    status+=restore;
-    obj_Controller.credits-=restore
+            <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
+    PlayVoice(inf_big_monster, false);
+    if(obj_Controller.time&lt;6)
+        firepower=7
+    else
+        firepower=15
+    target.status-=firepower;
+    reloading=true
+    alarm[1]=15
+    if(!panic_mode)alarm[2]=30
+}
+if(target==undefined){
+    recent_victory=true;
+    alarm[4]=600;
     }
     
+
 </string>
           </argument>
         </arguments>
@@ -345,6 +359,7 @@ if(status&lt;=0){
           <argument>
             <kind>1</kind>
             <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
+    PlayVoice(inf_small_monsterd, false);
     if(obj_Controller.time&lt;6)
         firepower=7
     else
@@ -361,6 +376,34 @@ if(target==undefined){
     
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_EvacuationPoint">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(status&lt;30){
+    restore=random(69)
+    status+=restore;
+    obj_Controller.credits-=restore
+    }
+    
 </string>
           </argument>
         </arguments>
@@ -397,44 +440,6 @@ if(target==undefined){
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_BigMonster">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(target!=0&amp;&amp;!reloading&amp;&amp;instance_exists(target)){
-    if(obj_Controller.time&lt;6)
-        firepower=7
-    else
-        firepower=15
-    target.status-=firepower;
-    reloading=true
-    alarm[1]=15
-    if(!panic_mode)alarm[2]=30
-}
-if(target==undefined){
-    recent_victory=true;
-    alarm[4]=600;
-    }
-    
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="6" enumb="0">
       <action>
         <libid>1</libid>
@@ -453,6 +458,7 @@ if(target==undefined){
           <argument>
             <kind>1</kind>
             <string>obj_Controller.current_unit=id;
+PlayVoice(inf_selected, false);
 
 </string>
           </argument>

@@ -42,6 +42,7 @@ weather_text="Weather: ";
 airstrike=false
 
 show_status=false
+fallout_warning = false;
 
 
 </string>
@@ -176,8 +177,11 @@ population_text="Population: "+string(population)+"%"
 population-=random(2)
 instance_create(x,y,obj_Civilian)
 
-if(population&lt;=0)
+if(population&lt;=0){
+        PlayVoice(city_evacuation_end, true);
         instance_change(obj_AbandonedCity,true)
+}
+        
 </string>
           </argument>
         </arguments>
@@ -243,11 +247,13 @@ if(evacuater!=0){
 }
 }
 if(place_meeting(x,y,obj_Infantry)==true){
-    if(evacuater==0)
+    if(evacuater==0){
+        PlayVoice(city_evacuation, false);
         evacuater=other.id
+    }
 }
-else{
-    
+else if(evacuater != 0){
+   PlayVoice(city_evacuation_paused, true);
     evacuater=0
 }
 if(((place_meeting(x,y,obj_BigMonster))||(place_meeting(x,y,obj_Monsters)))&amp;&amp;evacuater==0&amp;&amp;under_attack==false)
@@ -257,9 +263,12 @@ if(((place_meeting(x,y,obj_BigMonster))||(place_meeting(x,y,obj_Monsters)))&amp;
     under_attack=true
 }
 
-if(place_meeting(x,y,obj_RadioactiveCloud)){
+if(place_meeting(x,y,obj_RadioactiveCloud) &amp;&amp; !fallout_warning){
+    fallout_warning = true
+    PlayVoice(city_fallout, true);
+} else if(place_meeting(x,y,obj_RadioactiveCloud)){
     alarm[3]=15;
-}
+}else fallout_warning = false;
 
 
 status_text="Defenses status: "+string(status)+"%"
@@ -286,12 +295,7 @@ status_text="Defenses status: "+string(status)+"%"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//population_text="Populacja: "+string(population)+"%"+ " Obecny wybawca: "+string(evacuater)
-
-
-
-//show_message(evacuater)
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

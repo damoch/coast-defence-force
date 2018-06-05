@@ -92,8 +92,31 @@ cursor_sprite=cur_Cursor
 draw_offset=sprite_get_width(gui_Button)+10
 
 difficulty_level = instance_create(0,0,obj_DifficultyNORMAL);
+is_playing_sound = false;
 
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>is_playing_sound = false;
 </string>
           </argument>
         </arguments>
@@ -249,6 +272,7 @@ if(Chance(0.6)){
             <kind>1</kind>
             <string>//movement order
 if(mouse_check_button_pressed(mb_right)&amp;&amp;current_unit!=undefined){
+    PlayVoice(current_unit.moving_sound, false);
     current_unit.targetX=mouse_x;
     current_unit.targetY=mouse_y;
     current_unit.alarm[0]=1;

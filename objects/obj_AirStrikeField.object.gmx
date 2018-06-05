@@ -55,7 +55,7 @@ alarm[0]=2
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Tanks">
+    <event eventtype="4" ename="obj_BigMonster">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -72,7 +72,7 @@ alarm[0]=2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>status-=50
+            <string>status-=90
 </string>
           </argument>
         </arguments>
@@ -124,7 +124,7 @@ alarm[0]=2
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_BigMonster">
+    <event eventtype="4" ename="obj_Tanks">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -141,7 +141,7 @@ alarm[0]=2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>status-=90
+            <string>status-=50
 </string>
           </argument>
         </arguments>
