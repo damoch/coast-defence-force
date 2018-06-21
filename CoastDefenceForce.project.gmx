@@ -131,6 +131,7 @@
       <objects name="EFFECTS">
         <object>objects\obj_RadioactiveCloud</object>
         <object>objects\obj_WeatherField</object>
+        <object>objects\obj_MissleTrace</object>
       </objects>
       <objects name="MONSTERS">
         <object>objects\obj_Monsters</object>
