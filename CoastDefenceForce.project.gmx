@@ -96,6 +96,7 @@
       <sprite>sprites\spr_TempRadioactiveCloud</sprite>
     </sprites>
     <sprite>sprites\spr_RadioactiveCloud</sprite>
+    <sprite>sprites\spr_boom</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_Main</background>
@@ -132,6 +133,7 @@
         <object>objects\obj_RadioactiveCloud</object>
         <object>objects\obj_WeatherField</object>
         <object>objects\obj_MissleTrace</object>
+        <object>objects\obj_Boom</object>
       </objects>
       <objects name="MONSTERS">
         <object>objects\obj_Monsters</object>

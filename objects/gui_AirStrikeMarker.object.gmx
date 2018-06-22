@@ -76,19 +76,15 @@ status_text="Press RMB to start attack"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if(instance_exists(obj_SpecialForces)){
-    if(distance_to_object(obj_SpecialForces)&lt;128)
-        instance_change(obj_AirStrikeHugeField,true)
-    else
-        instance_change(obj_AirStrikeField,true)
-}
-else {
-    instance_change(obj_AirStrikeField,true)
+            <string>var boom = instance_create(x, y, obj_Boom);
+boom.max_size = 0.2;
+if(instance_exists(obj_SpecialForces) &amp;&amp; distance_to_object(obj_SpecialForces)&lt;128)
+{
+        boom.max_size = 0.3;
 }
 
 other.strike_done=true
-
+instance_destroy();
 status_text=""
 </string>
           </argument>
