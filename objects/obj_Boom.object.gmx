@@ -39,6 +39,8 @@ msg_x=0
 msg_y=0
 
 draw_flag=false
+durance = 12 * obj_Controller.update_time_value;
+decay_value = 0;
 </string>
           </argument>
         </arguments>
@@ -89,7 +91,13 @@ draw_flag=false
     image_xscale += scale_inc_value;
     image_yscale += scale_inc_value;
     if(image_alpha &gt;= 0.5)image_alpha -= scale_inc_value;
-} else if (is_explosion)is_explosion = false;
+} else if (is_explosion){
+    is_explosion = false;
+    decay_value = image_alpha/durance;
+}
+
+if(!is_explosion)image_alpha -= decay_value;
+if(image_alpha &lt;= 0)instance_destroy();
 
 </string>
           </argument>
