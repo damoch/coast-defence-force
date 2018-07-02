@@ -53,6 +53,7 @@ msg_x=0
 msg_y=0
 
 draw_flag=false
+is_radiated = false;
 </string>
           </argument>
         </arguments>
@@ -182,6 +183,7 @@ if(status&lt;=0){
 status_text=string(status)
 
 if(colliders==2)instance_destroy();
+if(is_radiated)instance_create(x,y,obj_Radiation);
 </string>
           </argument>
         </arguments>

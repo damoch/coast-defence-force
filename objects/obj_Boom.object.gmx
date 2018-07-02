@@ -122,6 +122,7 @@ if(image_alpha &lt;= 0)instance_destroy();
           <argument>
             <kind>1</kind>
             <string>if(is_explosion)with(other){instance_destroy();}
+else other.is_radiated = true;
 </string>
           </argument>
         </arguments>
@@ -145,6 +146,7 @@ if(image_alpha &lt;= 0)instance_destroy();
           <argument>
             <kind>1</kind>
             <string>if(is_explosion)with(other){instance_destroy();}
+else other.is_radiated = true;
 </string>
           </argument>
         </arguments>

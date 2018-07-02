@@ -134,6 +134,7 @@
         <object>objects\obj_WeatherField</object>
         <object>objects\obj_MissleTrace</object>
         <object>objects\obj_Boom</object>
+        <object>objects\obj_Radiation</object>
       </objects>
       <objects name="MONSTERS">
         <object>objects\obj_Monsters</object>
