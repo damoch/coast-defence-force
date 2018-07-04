@@ -30,7 +30,7 @@ start_y=y
 
 
 strike_done=false
-aircraft_speed=60/obj_Controller.seconds_to_hour;
+aircraft_speed=25/obj_Controller.seconds_to_hour;
 </string>
           </argument>
         </arguments>
@@ -57,8 +57,8 @@ aircraft_speed=60/obj_Controller.seconds_to_hour;
     marker_x=gui_AirStrikeMarker.x
     marker_y=gui_AirStrikeMarker.y
 }
-
-move_towards_point(marker_x,marker_y,aircraft_speed)
+image_angle = point_direction(x, y, marker_x, marker_y) - 90;
+move_towards_point(marker_x,marker_y,aircraft_speed);
 </string>
           </argument>
         </arguments>
@@ -87,7 +87,7 @@ move_towards_point(marker_x,marker_y,aircraft_speed)
     speed=0
     gui_AirStrikeButton.alarm[0]=600
     strike_done=false
-}
+} else instance_create(x,y,obj_MissleTrace);
 </string>
           </argument>
         </arguments>
